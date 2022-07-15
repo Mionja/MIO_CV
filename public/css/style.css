@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+
+.br-section-wrapper,
+.br-sideleft-menu, 
+.br-sideleft , 
+.sideleft-scrollbar,
+.br-header,
+.br-header::before,
+.br-logo,
+.br-pageheader{
+    background-color: #1b1b1b;
+}
+.form-control{
+    background-color: rgba(153, 0, 255, 0.096);
+    color: white;
+    border-radius: 10px;
+}
