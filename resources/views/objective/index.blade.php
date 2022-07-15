@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('page-title')
-    <h2><img src = "{{asset('img/education.png')}}">EDUCATION</h2> 
+    <h2><img src = "{{asset('img/objective.png')}}">OBJECTIVE</h2> 
 @endsection
 
-@section('pagetitle', 'Education')
+@section('pagetitle', 'Objective')
 
 @section('page-description', ' ')
 

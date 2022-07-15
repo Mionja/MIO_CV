@@ -24,17 +24,18 @@
     <div class="br-logo"><a href="#"><span class="text-danger">[ </span> <i class="text-muted">MIO CV</i><span class="text-danger">]</span></a></div>
     <div class="br-sideleft sideleft-scrollbar ">
       <ul class="br-sideleft-menu">
+        <label class="sidebar-label pd-x-10 mg-t-20 op-3">  </label>
         <li class="br-menu-item">
           <a href="index-2.html" class="br-menu-link">
-            <img src="{{asset('img/house.png')}}" class="menu-item-icon icon ion-ios-home-outline tx-24 mt-5">
-            <span class="menu-item-label mt-5">HOME</span>
+            <img src="{{asset('img/house.png')}}" class="menu-item-icon wd-25">
+            <span class="menu-item-label ">HOME</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
 
         <label class="sidebar-label pd-x-10 mg-t-20 op-3 mt-5">Sections</label>
         <li class="br-menu-item">
           <a href="{{route('perso_details.index')}}" class="br-menu-link">
-            <img src="{{asset('img/perso_detail.png')}}" alt="img" class="menu-item-icon">
+            <img src="{{asset('img/perso_detail.png')}}" alt="img" class="menu-item-icon wd-30">
             <span  class="menu-item-label"> PERSONAL DETAILS</span>
           </a><!-- br-menu-link -->
         
@@ -42,23 +43,29 @@
 
         <li class="br-menu-item">
           <a href="{{route('education')}}" class="br-menu-link">
-            <img src="{{asset('img/education.png')}}" alt="img" class="menu-item-icon ">
+            <img src="{{asset('img/education.png')}}" alt="img" class="menu-item-icon wd-30">
             <span class="menu-item-label">EDUCATION</span>
           </a><!-- br-menu-link -->
           
         </li>
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link ">
-            <img src="{{asset('img/experience.png')}}" alt="img" class="menu-item-icon ">
+          <a href="{{route('experience')}}" class="br-menu-link ">
+            <img src="{{asset('img/experience.png')}}" alt="img" class="menu-item-icon wd-30">
             <span class="menu-item-label">EXPERIENCE</span>
-          </a><!-- br-menu-link -->
-          
+          </a><!-- br-menu-link --> 
         </li>
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link ">
-            <img src="{{asset('img/objective.png')}}" alt="img" class="menu-item-icon ">
+          <a href="{{route('formation')}}" class="br-menu-link ">
+            <img src="{{asset('img/formation.png')}}" alt="img" class="menu-item-icon wd-30">
+            <span class="menu-item-label "> FORMATION</span>
+          </a><!-- br-menu-link -->
+        </li>
+
+        <li class="br-menu-item">
+          <a href="{{route('objective')}}" class="br-menu-link ">
+            <img src="{{asset('img/objective.png')}}" alt="img" class="menu-item-icon  wd-30">
             <span class="menu-item-label">OBJECTIVE</span>
           </a><!-- br-menu-link -->
           
@@ -67,29 +74,36 @@
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">More sections</label>
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link ">
-            <img src="{{asset('img/age.png')}}" alt="img" class="menu-item-icon ">
+          <a href="{{route('age')}}" class="br-menu-link ">
+            <img src="{{asset('img/age.png')}}" alt="img" class="menu-item-icon  wd-30">
             <span class="menu-item-label">AGE</span>
           </a><!-- br-menu-link -->
         </li>
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link ">
-            <img src="{{asset('img/skill.png')}}" alt="img" class="menu-item-icon">
-            <span class="menu-item-label "> SKILL</span>
+          <a href="{{route('h_skill')}}" class="br-menu-link ">
+            <img src="{{asset('img/skill.png')}}" alt="img" class="menu-item-icon wd-30">
+            <span class="menu-item-label "> HARD SKILLS</span>
           </a><!-- br-menu-link -->
         </li>
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link ">
-            <img src="{{asset('img/hobbies.png')}}" alt="img" class="menu-item-icon ">
+          <a href="{{route('s_skill')}}" class="br-menu-link ">
+            <img src="{{asset('img/s_skill.png')}}" alt="img" class="menu-item-icon wd-30">
+            <span class="menu-item-label "> SOFT SKILLS</span>
+          </a><!-- br-menu-link -->
+        </li>
+
+        <li class="br-menu-item">
+          <a href="{{route('activity')}}" class="br-menu-link ">
+            <img src="{{asset('img/hobbies.png')}}" alt="img" class="menu-item-icon wd-30">
             <span class="menu-item-label ">ACTIVITIES</span>
           </a><!-- br-menu-link -->
         </li>
         
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link">
-            <img src="{{asset('img/language.png')}}" alt="img" class="menu-item-icon">
+          <a href="{{route('language')}}" class="br-menu-link">
+            <img src="{{asset('img/language.png')}}" alt="img" class="menu-item-icon wd-30">
             <span class="menu-item-label">LANGUAGE</span>
           </a><!-- br-menu-link -->
         </li>
