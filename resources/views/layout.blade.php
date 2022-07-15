@@ -41,7 +41,7 @@
         </li>
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link">
+          <a href="{{route('education')}}" class="br-menu-link">
             <img src="{{asset('img/education.png')}}" alt="img" class="menu-item-icon ">
             <span class="menu-item-label">EDUCATION</span>
           </a><!-- br-menu-link -->
@@ -105,6 +105,7 @@
 
       <br>
     </div><!-- br-sideleft -->
+
     <!-- ########## FIN DU MENU A GAUCHE ########## -->
 
     <!-- ########## ENTETE ########## -->

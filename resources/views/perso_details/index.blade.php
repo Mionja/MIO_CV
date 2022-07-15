@@ -5,6 +5,7 @@
 @section('page-title')
     <h2><img src = "{{asset('img/perso_detail.png')}}">PERSONAL DETAILS</h2> 
 @endsection
+
 @section('page-description', ' As it says you can write things about you here ')
 
 @section('main-content')
