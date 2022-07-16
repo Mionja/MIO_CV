@@ -18,14 +18,16 @@ use App\Http\Controllers\Perso_detailsController;
 Route::get('/', function () {return view('layout');})->name('layout'); //A rectifier apres
 
 Route::resource('perso_details', Perso_detailsController::class);
-Route::get('/cv', [ResumesController::class, 'index'])->name('cv');
-Route::get('/education', [EducationsController::class, 'index'])->name('education');
-Route::get('/experience', [ExperiencesController::class, 'index'])->name('experience');
-Route::get('/formation', [FormationsController::class, 'index'])->name('formation');
-Route::get('/objective', [ObjectivesController::class, 'index'])->name('objective');
+Route::resource('education', EducationsController::class);
+Route::resource('experience', ExperiencesController::class);
+Route::resource('formation', FormationsController::class);
+Route::resource('objective', ObjectivesController::class);
+Route::resource('h_skill', Hard_skillsController::class);
+Route::resource('s_skill', Soft_skillsController::class);
+Route::resource('activity', ActivitiesController::class);
+Route::resource('education', EducationsController::class);
+Route::resource('language', LanguagesController::class);
+
 Route::get('/age', [AgesController::class, 'index'])->name('age');
-Route::get('/hardSkills', [Hard_skillsController::class, 'index'])->name('h_skill');
-Route::get('/softSkills', [Soft_skillsController::class, 'index'])->name('s_skill');
-Route::get('/activities', [ActivitiesController::class, 'index'])->name('activity');
-Route::get('/languages', [LanguagesController::class, 'index'])->name('language');
+Route::get('/cv', [ResumesController::class, 'index'])->name('cv');
 
