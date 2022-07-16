@@ -9,8 +9,5 @@
 @section('page-description', '')
 
 @section('main-content')
-<h1>LIST OF ALL EXPERIENCES</h1>
-<a href="{{route('experience.create')}}">ADD</a><br>
-<a href="#">DELETE</a><br>
-<a href="#">MODIFY</a>
+    <h1>FORM</h1>
 @endsection

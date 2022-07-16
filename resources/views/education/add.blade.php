@@ -9,8 +9,5 @@
 @section('page-description', ' ')
 
 @section('main-content')
-<h1>LIST OF EVERY EDUCATION</h1>
-<a href="{{route('education.create')}}">ADD</a><br>
-<a href="#">DELETE</a><br>
-<a href="#">MODIFY</a>
+<h1>YO</h1>
 @endsection
