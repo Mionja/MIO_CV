@@ -29,5 +29,6 @@ Route::resource('education', EducationsController::class);
 Route::resource('language', LanguagesController::class);
 
 Route::get('/age', [AgesController::class, 'index'])->name('age');
+Route::get('/age_u', [AgesController::class, 'update'])->name('update');
 Route::get('/cv', [ResumesController::class, 'index'])->name('cv');
 

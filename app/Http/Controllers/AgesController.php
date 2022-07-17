@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Age;
 use Illuminate\Http\Request;
 
 class AgesController extends Controller
 {
-    public function index()
+    public function index($id = 1)
     {
-        return view('age');
+        $age = Age::find($id);
+        //dd($age);
+        return view('age', compact('age'));
+    }
+    
+    public function update(Request $request, $id = 1)
+    {
+        $a = Age::find($id);
+
+        $age = $request -> age;
+        $a -> update(['age'=> $age]);
+        
+        return redirect()->route('age');
     }
 }

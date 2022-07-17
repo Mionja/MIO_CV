@@ -18,10 +18,9 @@
 
 <body>
     <a href="{{route('layout')}}">Retour</a>
-
 {{-- //---------------------------------------------------------------------------------------------------- --}}
     <div class="container ">
-        <div class="media border p-3 " style="background-color: rgb(63, 133, 212);">
+        <div class="media border p-3 bg-info" >
             <img src="{{ asset('img/perso_detail.png') }}" alt="photo" class="mr-3 mt-3 rounded-circle" style="width:150px;">
             <div class="media-body mt-3" >
                 <h1>{{$perso_details->nom}}</h1>
@@ -36,20 +35,69 @@
                         {{$perso_details->address}}
                     </div>
                 </div>
+                <div class="row ml-5">
+                    {{$a->age}}
+                </div>
             </div>
         </div>
 {{-- //---------------------------------------------------------------------------------------------------- --}}        
         <div class="media border">
             <div class="row">
 {{-- CONTENU DE GAUCHE --}}
-                <div class="col-sm-4 bg-info ml-3">
+                <div class="sideleft bg-info ml-3">
                     LEFT SIDE
+                    <div class="row">
+                        <h4 class="ml-3 mt-3">EDUCATION</h4>
+                        <div class="col">
+                            @foreach($educations as $education)
+                            <ul>
+                                <li>{{$education -> degree}}</li>
+                                <li>{{$education -> school}}</li>
+                                <li>{{$education -> grade}}</li>
+                                <li>{{$education -> year}}</li>
+                            </ul> 
+                            @endforeach
+                        </div>
+                    </div>{{--  Fin row education --}}
                 </div>{{--  fin contenu gauche --}}
 
 {{-- CONTENU DE DROITE --}}
                 <div class="col">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aliquid perferendis illo quia hic sequi alias voluptates voluptas sint blanditiis pariatur cum ipsa a voluptatibus dignissimos recusandae accusantium vel voluptatum corrupti, enim perspiciatis? Voluptates velit vero officia debitis error accusamus iure aliquam hic, consequatur incidunt animi, aspernatur ducimus? Vero, earum.</p>
                     <div class="row">
+                        <h4 class="ml-3 mt-3">OBJECTIVE</h4>
+                        <div class="row">
+                            {{$obj->objective}}
+                        </div>
+                    </div>{{--  Fin row education --}}
+                    <div class="row">
+                        <h4 class="ml-3 mt-3">EDUCATION</h4>
+                        <div class="col">
+                            @foreach($educations as $education)
+                            <ul>
+                                <li>{{$education -> degree}}</li>
+                                <li>{{$education -> school}}</li>
+                                <li>{{$education -> grade}}</li>
+                                <li>{{$education -> year}}</li>
+                            </ul> 
+                            @endforeach
+                        </div>
+                    </div>{{--  Fin row education --}}
+
+                    <div class="row">
+                        <h4 class="ml-3 mt-3">EDUCATION</h4>
+                        <div class="col">
+                            @foreach($educations as $education)
+                            <ul>
+                                <li>{{$education -> degree}}</li>
+                                <li>{{$education -> school}}</li>
+                                <li>{{$education -> grade}}</li>
+                                <li>{{$education -> year}}</li>
+                            </ul> 
+                            @endforeach
+                        </div>
+                    </div>{{--  Fin row education --}}
+                             
+                    <div class="row border">
                         <div class="col-sm-1"></div>PYTHON</div>
                         <div class="col-sm-3">
                             <div class="progress mb-3">
