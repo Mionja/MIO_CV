@@ -50,10 +50,14 @@
                     </td>
             </tr>
             @endforeach  
-            <a href="{{route('education.create')}}" class="btn btn-info float-right">ADD</a>
         </tbody>
     </table>
-    
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-1 ml-5">
+            <a href="{{route('education.create')}}" class="btn btn-info float-right">ADD</a>
+        </div>
+    </div>
     <div class="d-flex justify-content-center mt-3">
         {{ $educations->links() }}
     </div>

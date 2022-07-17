@@ -39,7 +39,7 @@
             <div class="row  mg-t-20">
                 <div class="col-lg">
                     <label for="details">Details</label>
-                    <textarea name="details" class="form-control" value="" ></textarea>
+                    <input name="details" class="form-control" value="" type="text">
                 </div><!-- col -->
             </div><!-- row -->
 

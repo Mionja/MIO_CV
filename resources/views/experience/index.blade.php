@@ -20,7 +20,7 @@
                 <th scope="col" class="text-light">Job title</th>
                 <th scope="col" class="text-light">Start date</th>
                 <th scope="col" class="text-light">End date</th>
-                <th scope="col" class="text-light">Details</th>
+                <th scope="col" class="text-light w-5">Details</th>
                 <th colspan="2" class="text-light pl-5 border-left">Actions</th>
             </tr>
         </thead>
@@ -52,10 +52,14 @@
                     </td>
             </tr>
             @endforeach  
-            <a href="{{route('experience.create')}}" class="btn btn-info float-right">ADD</a>
         </tbody>
     </table>
-    
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-1 ml-5">
+            <a href="{{route('experience.create')}}" class="btn btn-info float-right">ADD</a>
+        </div>
+    </div>
     <div class="d-flex justify-content-center mt-3">
         {{ $experiences->links() }}
     </div>

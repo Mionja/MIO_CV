@@ -16,12 +16,12 @@
         <div class="br-section-wrapper">
             <div class="row">
                 <div class="col-lg">
-                    <label for="objective">Your Objective</label>
-                    <input name="objective" class="form-control" value="{{ $obj->objective }}" type="text" required>
+                    <label for="objective"><h4>Your Objective</h4> </label>
+                    <textarea name="objective" class="form-control mt-3" type="text" required style="height: 150px">{{ $obj->objective }}</textarea>
                 </div><!-- col -->
             </div><!-- row -->
         </div>
-        <input type="submit" value="Save" class="btn btn-success mt-5 float-right mr-5">
+        <input type="submit" value="Save" class="btn btn-success mt-5 float-right mr-5 mb-5">
     </div>
 </form>
 @endsection

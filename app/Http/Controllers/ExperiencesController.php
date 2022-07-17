@@ -10,7 +10,7 @@ class ExperiencesController extends Controller
 
     public function index()
     {
-        $experiences = Experience::orderBy('id')->paginate(5);
+        $experiences = Experience::orderBy('id')->paginate(3);
         return view('experience.index', compact('experiences'));
     }  
 

@@ -9,7 +9,7 @@ class EducationsController extends Controller
 {
     public function index()
     {
-        $educations = Education::orderBy('id')->paginate(5);
+        $educations = Education::orderBy('id')->paginate(3);
         return view('education.index', compact('educations'));
     }
 
