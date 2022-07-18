@@ -11,11 +11,12 @@ use App\Http\Controllers\FormationsController;
 use App\Http\Controllers\ObjectivesController;
 use App\Http\Controllers\ExperiencesController;
 use App\Http\Controllers\Hard_skillsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Soft_skillsController;
 use App\Http\Controllers\Perso_detailsController;
 
 
-Route::get('/', function () {return view('layout');})->name('layout'); //A rectifier apres
+Route::get('/', [HomeController::class, 'index'])->name('home'); //A rectifier apres
 
 Route::resource('perso_details', Perso_detailsController::class);
 Route::resource('education', EducationsController::class);

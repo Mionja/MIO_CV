@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <a href="{{route('layout')}}">Retour</a>
+    <a href="{{route('home')}}">Retour</a>
 {{-- //---------------------------------------------------------------------------------------------------- --}}
     <div class="container ">
         <div class="media border p-3 bg-info" >

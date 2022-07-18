@@ -9,7 +9,7 @@
 @section('page-description', ' ')
 
 @section('main-content')
-<form action="{{route('h_skill.show', $s_skill->id)}}" method="POST" class="black-form">
+<form action="{{route('h_skill.show', $h_skill->id)}}" method="POST" class="black-form">
     @csrf
     @method('get')
     <div class="br-pagebody">
