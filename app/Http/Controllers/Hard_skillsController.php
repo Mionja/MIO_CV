@@ -20,9 +20,7 @@ class Hard_skillsController extends Controller
     public function store(Request $request)
     {
         $name = $request-> name;
-        $level = $request-> level['id'];
-
-        dd($level['id']);
+        $level = $request-> level;
 
         HardSkill::create([
             'name'=>$name,

@@ -120,21 +120,12 @@
                     </div> 
                     <div class="container">
                         <h5 class="bg-dark text-light">Hard skills</h5>
+                        @foreach($h_skill as $h_skill)
+                            {{$h_skill->name}} : 
                             <div class="progress mb-3 bg-black-2">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:12%"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:{{$h_skill->level}}%"></div>
                             </div>
-                            <div class="progress mb-3 bg-black-2">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:25%"></div>
-                            </div>
-                            <div class="progress mb-3 bg-black-2">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:50%"></div>
-                            </div>
-                            <div class="progress mb-3 bg-black-2">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:75%"></div>
-                            </div>
-                            <div class="progress mb-3 bg-black-2">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:100%"></div>
-                            </div>
+                        @endforeach
                     </div>
 
                     {{-- <div class="row border">

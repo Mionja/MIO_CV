@@ -7,6 +7,7 @@ use App\Models\Activity;
 use App\Models\Language;
 use App\Models\Education;
 use App\Models\Formation;
+use App\Models\HardSkill;
 use App\Models\Objective;
 use App\Models\SoftSkill;
 use App\Models\Experience;
@@ -17,6 +18,7 @@ class ResumesController extends Controller
 {
     public function index()
     {
+        $h_skill = HardSkill::all();
         $formations = Formation::all();
         $experiences = Experience::all();
         $languages = Language::all();
@@ -26,6 +28,6 @@ class ResumesController extends Controller
         $perso_details = Perso_detail::where('id', '1')->first();
         $obj = Objective::where('id', '1')->first();
         $a = Age::where('id', '1')->first();
-        return view("cv", compact('perso_details', 'educations', 'obj', 'a', 's_skill', 'activities', 'languages', 'experiences','formations'));
+        return view("cv", compact('perso_details', 'educations', 'obj', 'a', 's_skill', 'activities', 'languages', 'experiences','formations','h_skill'));
     }
 }

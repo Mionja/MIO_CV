@@ -23,11 +23,11 @@
             <div class="row mr-5 mt-4">
                 <div class="col-lg">
                     <span class="mr-5">Level :</span>
-                    1 <input type="radio" name="level" id="1" class="mr-5">
-                    2 <input type="radio" name="level" id="2" class="mr-5">
-                    3 <input type="radio" name="level" id="3" class="mr-5">
-                    4 <input type="radio" name="level" id="4" class="mr-5">
-                    5 <input type="radio" name="level" id="5" class="mr-5">
+                    1 <input type="radio" name="level" value="12" class="mr-5" required>
+                    2 <input type="radio" name="level" value="25" class="mr-5">
+                    3 <input type="radio" name="level" value="50" class="mr-5">
+                    4 <input type="radio" name="level" value="75" class="mr-5">
+                    5 <input type="radio" name="level" value="100" class="mr-5">
                 </div>
             </div>
         </div>
