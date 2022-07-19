@@ -19,7 +19,7 @@
   <body class="bg-dark">
 
       <div class="container center mr-5 mt-5 mb-5">
-       <h1> Welcome to homepage!</h1>
+       <h1> Welcome to mio_homepage!</h1>
       </div>
       <div class="jumbotron jumbotron-fluid">
         <div class="container mt-5 mt-5">

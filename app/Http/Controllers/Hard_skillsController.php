@@ -20,8 +20,13 @@ class Hard_skillsController extends Controller
     public function store(Request $request)
     {
         $name = $request-> name;
+        $level = $request-> level['id'];
+
+        dd($level['id']);
+
         HardSkill::create([
             'name'=>$name,
+            'level'=>$level,
         ]);
 
         return redirect()->route('h_skill.index');
@@ -39,8 +44,9 @@ class Hard_skillsController extends Controller
         $h_skill = HardSkill::find($id);
 
         $name = $request-> name;
+        $level = $request-> level;
 
-        $h_skill->update(['name'=>$name,]);
+        $h_skill->update(['name'=>$name, 'level'=>$level,]);
 
         return redirect()->route('h_skill.index');
     }
@@ -48,7 +54,7 @@ class Hard_skillsController extends Controller
 
     public function destroy($id)
     {
-        $act = HardSkill::find($id)->delete();
+        HardSkill::find($id)->delete();
 
         return redirect()->route('h_skill.index');
     }

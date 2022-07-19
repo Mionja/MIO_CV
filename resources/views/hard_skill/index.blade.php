@@ -13,6 +13,7 @@
     <div class="row">
         <div class="col-6 ml-5 bg-dark text-light mt-3">
             <h5 class="mt-2">{{$h_skill->name}}</h5>
+            <span>{{$h_skill->level}}</span>
         </div>
         <div class="col-sm-1 mt-4">
             <form action="{{route('h_skill.edit', $h_skill->id)}}" method="POST">
