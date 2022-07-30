@@ -42,6 +42,15 @@
                 <input name="num" class="form-control" value="{{ $perso_details->num }}" type="number" required>
                 </div><!-- col -->
             </div><!-- row -->
+
+            <div class="row  mg-t-20">
+                <div class="col-lg">
+                    <label for="num">Your profile photo</label>
+                <input name="photo" class="form-control" value="{{ $perso_details->photo }}" type="file" required>
+                </div><!-- col -->
+            </div><!-- row -->
+
+
             <div class="row  mg-t-20">
                 <div class="col-lg">
                 <input type="submit" value="Save" class="btn  btn-success mt-5 float-right mr-5">

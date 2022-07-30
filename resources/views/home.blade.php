@@ -30,7 +30,7 @@
             </div>
             <div class="col-5">
               <code><h2 class="mb-5">Still in reparation :)</h2></code>
-              <p>Come again later. <br> But you can already create your own cv, enjoy !</p>
+              <p>Come again later. <br> You can already create your own cv though, enjoy it!</p>
               <a href="{{route('perso_details.index')}}" class="float-right mr-5" style="text-decoration: underline">Create CV</a>
             </div>
           </div>

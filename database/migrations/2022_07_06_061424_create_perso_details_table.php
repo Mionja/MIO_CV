@@ -19,6 +19,7 @@ class CreatePersoDetailsTable extends Migration
             $table -> string('address');
             $table -> string('email');
             $table -> integer('num');
+            $table -> string('photo');
             $table->timestamps();
         });
     }
