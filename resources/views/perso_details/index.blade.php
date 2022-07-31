@@ -9,11 +9,10 @@
 @section('page-description', ' As it says you can write things about you here ')
 
 @section('main-content')
-     <form action="{{route('perso_details.update', $perso_details->id)}}" method="POST" class="black-form">
+     <form action="{{route('perso_details.update', $perso_details->id)}}" method="POST" enctype="multipart/form-data" class="black-form">
         @csrf
         @method('put')
         <div class="br-pagebody">
-            
             <div class="br-section-wrapper">
             <div class="row">
                 <div class="col-lg">
@@ -45,8 +44,15 @@
 
             <div class="row  mg-t-20">
                 <div class="col-lg">
-                    <label for="num">Your profile photo</label>
-                <input name="photo" class="form-control" value="{{ $perso_details->photo }}" type="file" required>
+                    <label for="num" class="mt-5">Your profile picture</label>
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="img/{{$perso_details->photo}}" alt="photo" class="mr-3 mb-3 rounded-circle border" style="width:100px; height:100px;">
+                        </div>
+                        <div class="col-4">
+                            <input name="photo" class="form-control mt-4" type="file"  required>
+                        </div>
+                    </div>
                 </div><!-- col -->
             </div><!-- row -->
 

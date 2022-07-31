@@ -16,34 +16,20 @@ class Perso_detailsController extends Controller
    
     public function update (Request $request, $id=1)
     {
-        dd($request['photo']);
         $perso_details = Perso_detail::find($id);
 
         $nom = $request->nom;
         $address = $request->address;
         $email = $request->email;
         $num = $request->num;
-        $photo = $request['photo'];
 
-        // $i_tmpname = $_FILES[$photo]['tmp_name'];
-        // $i_name = $_FILES[$photo]['name'];
-        // $i_size = $_FILES[$photo]['size'];
+        $name = $request->file('photo')->getClientOriginalName();
+        $request->file('photo')->move('img/', $name);
 
-        // $tabExtension = explode('.', $i_name);
-        // $extension = strtolower(end($tabExtension));
-        // $maxSize = 400000;
-
-        // $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-
-        // if (in_array($extension,$extensions) && $i_size <= $maxSize) 
-        // {
-        //     move_uploaded_file($i_tmpname, "{{asset('img/". $photo ." ')}}");
-
-        //     $perso_details->update(['nom'=>$nom, 'address'=>$address, 'email'=>$email, 'num'=>$num, 'photo'=>$photo]);            
-        // }
+        $perso_details->update(['nom'=>$nom, 'address'=>$address, 'email'=>$email, 'num'=>$num, 'photo'=>$name]);            
 
 
-        // return redirect()->route('perso_details.index');
+        return redirect()->route('perso_details.index');
     }
 
 }

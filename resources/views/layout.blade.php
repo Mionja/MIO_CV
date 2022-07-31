@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
 
     <title>MIO CV</title>
-
 
     <link href="{{ asset('css/all.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/css/ionicons.min.css') }}" rel="stylesheet">
@@ -132,7 +127,7 @@
     <!-- ########## FIN ENTETE ########## -->
 
 
-    <!-- ########## CONTENU PRINCIPAL ########## -->
+  <!-- ########## CONTENU PRINCIPAL ########## -->
     <div class="br-mainpanel">
       <div class="br-pageheader">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -152,7 +147,9 @@
         
       </div><!-- br-pagebody -->
     </div><!-- br-mainpanel -->
-    <!-- ########## FIN DU MENU PRINCIPALE ########## -->
+  <!-- ########## FIN DU MENU PRINCIPALE ########## -->
+
+  
     <footer>
       <div class="mb-5"></div>
     </footer>

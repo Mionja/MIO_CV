@@ -45,8 +45,7 @@
                         <form action="{{route('formation.destroy', $formation-> id)}}" method="post" class="">
                             @csrf
                             @method('DELETE')
-                            <img src="{{asset('img/delete.png')}}" class="icon w-20">
-                            <button class=" text text-danger ml-1" type="submit">Delete</button>
+                            <button ml-1" type="submit"><img src="{{asset('img/delete.png')}}" class="icon w-20"></button>
                         </form>
                     </td>
             </tr>
