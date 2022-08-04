@@ -23,28 +23,40 @@
 
         <marquee behavior="20" direction="right" class="mt-5">Bouuuuuuuuuuu</marquee>
     </div>
+
+    
 {{-- //---------------------------------------------------------------------------------------------------- --}}
-    <div class="container mt-5 w-75">
+    <div class="container mt-5 w-100">
         <div class="media border p-3 bg-dark text-light">
             <img src="img/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
             <div class="container mt-3" >
                 <h1>{{$perso_details->nom}}</h1>
-                <div class="row mt-5 ml-3">
-                    <div class="col"><img src="{{ asset('img/mail.png') }}" alt="" style="width: 22px;">
-                             {{$perso_details->email}}
-                    </div>
-                    <div class="col"><img src="{{ asset('img/phone.png') }}" alt="" style="width: 22px;">
-                        {{$perso_details->num}}
-                    </div>
-                    <div class="col"><img src="{{ asset('img/home.png') }}" alt="" style="width: 22px;">
-                        {{$perso_details->address}}
-                    </div>
-                </div>
-                <div class="row ml-5">
+                    <ul class="nav mt-5">
+                        <li class="nav-item">
+                          <span class="nav-link text-light">
+                            <img src="{{ asset('img/mail.png') }}" alt="" style="width: 22px;">
+                            {{$perso_details->email}}</span>
+                        </li>
+                        <li class="nav-item">
+                          <span class="nav-link text-light">
+                            <img src="{{ asset('img/phone.png') }}" alt="" style="width: 22px;">
+                            {{$perso_details->num}}
+                          </span>
+                        </li>
+                        <li class="nav-item">
+                          <span class="nav-link text-light">
+                            <img src="{{ asset('img/home.png') }}" alt="" style="width: 22px;">
+                            {{$perso_details->address}}
+                          </span>
+                        </li>
+                      </ul>
+                    
+                <div class="row ml-3 mt-4">
                     {{$a->age}}
                 </div>
             </div>
         </div>
+        
 {{-- //---------------------------------------------------------------------------------------------------- --}}        
         <div class="media border">
             <div class="row">

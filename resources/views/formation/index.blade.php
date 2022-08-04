@@ -13,7 +13,7 @@
 <div class="container">
     <table class="table table-striped table-hover table-dark mb-5 rounded" >
         <div class="d-flex justify-content-center mt-3">
-            {{ $formations->links() }}
+            {{ $formations->links() }} {{--paginate --}}
         </div>
         <thead >
             <tr>
@@ -36,8 +36,8 @@
                         <form action="{{route('formation.edit', $formation -> id)}}" method="POST">
                             @csrf
                             @method('get')
-                            <img src="{{asset('img/edit.png')}}" class="icon w-20">
-                            <button class="ml-1 text-info" type="submit">Edit</button>
+                            
+                            <button class="ml-1 btn btn-sm btn-light" type="submit"><img src="{{asset('img/edit.png')}}" class="icon w-20"></button>
                         </form>
                     </td>
                     {{-- Deletion --}}
@@ -45,7 +45,7 @@
                         <form action="{{route('formation.destroy', $formation-> id)}}" method="post" class="">
                             @csrf
                             @method('DELETE')
-                            <button ml-1" type="submit"><img src="{{asset('img/delete.png')}}" class="icon w-20"></button>
+                            <button class="ml-1 btn btn-sm btn-light" type="submit"><img src="{{asset('img/delete.png')}}" class="icon w-20"></button>
                         </form>
                     </td>
             </tr>
