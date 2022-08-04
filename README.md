@@ -5,6 +5,8 @@ This is my first personal project with laravel. It consists in creating a CV by 
 
 This project of mine is still on-going, so I'm still correcting every default step by step while leaning new things.
 
+
+A little overview:
 ![image](https://user-images.githubusercontent.com/105538414/182940918-b95ffae3-d292-47e2-9aec-b3f6e7837f1f.png)
 
 
