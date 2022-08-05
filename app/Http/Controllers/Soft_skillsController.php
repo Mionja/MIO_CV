@@ -19,13 +19,17 @@ class Soft_skillsController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' =>  'required'  
+        ]);
         $name = $request-> name;;
 
         SoftSkill::create([
             'name'=>$name,
         ]);
 
-        return redirect()->route('s_skill.index');
+
+        return redirect()->route('s_skill.index')->with('success', "Vita le insertion");
     }
 
     public function edit($id)
@@ -52,7 +56,7 @@ class Soft_skillsController extends Controller
         $act = SoftSkill::find($id);
         $act->delete();
 
-        return redirect()->route('s_skill.index');
+        return redirect()->route('s_skill.index')->with('error', "Une ligne a été supprimé");
     }
 }
 

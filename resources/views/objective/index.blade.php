@@ -17,7 +17,12 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="objective"><h4>Your Objective</h4> </label>
-                    <textarea name="objective" class="form-control mt-3" type="text" required style="height: 150px">{{ $obj->objective }}</textarea>
+                    <textarea name="objective" class="form-control mt-3 @error('objective') is-invalid @enderror" type="text" style="height: 150px">{{ $obj->objective }}</textarea>
+                    @error('objective')
+                    <div class="invalid-feedback">
+                        You must fill this before saving
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
         </div>

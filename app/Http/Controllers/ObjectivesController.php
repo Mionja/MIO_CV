@@ -15,6 +15,10 @@ class ObjectivesController extends Controller
 
     public function update(Request $request, $id = 1)
     {
+        $request->validate([
+            'objective' =>  'required'  
+        ]);
+
         $obj = Objective::find($id);
 
         $objective = $request->objective;

@@ -16,7 +16,7 @@
         <div class="br-section-wrapper">
             <div class="row">
                 <div class="col-lg">
-                    <label for="age">Your age</label>
+                    <label for="age" class="mb-3"><h4> Your age</h4></label>
                     <input name="age" class="form-control" value="{{ $age->age }}" type="text" required>
                 </div><!-- col -->
             </div><!-- row -->

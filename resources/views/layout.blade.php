@@ -117,6 +117,8 @@
 
     <!-- ########## FIN DU MENU A GAUCHE ########## -->
 
+
+
     <!-- ########## ENTETE ########## -->
     <div class="br-header">
       <div class="br-header-left">
@@ -125,6 +127,8 @@
       </div><!-- br-header-left -->
     </div><!-- br-header -->
     <!-- ########## FIN ENTETE ########## -->
+
+
 
 
   <!-- ########## CONTENU PRINCIPAL ########## -->
@@ -143,6 +147,7 @@
 
       <div class="br-pagebody">
 
+          @include('flash-message')
           @yield('main-content')    
         
       </div><!-- br-pagebody -->
