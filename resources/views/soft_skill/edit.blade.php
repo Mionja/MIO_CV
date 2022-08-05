@@ -17,7 +17,12 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="name">Your Activity</label>
-                    <input name="name" class="form-control" value="{{ $s_skill->name }}" type="text" required>
+                    <input name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $s_skill->name }}" type="text" required>
+                    @error('name')
+                    <div class="invalid-feedback">
+                        You must fill this before saving
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
         </div>

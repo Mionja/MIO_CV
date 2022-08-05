@@ -17,31 +17,56 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="company">Company name</label>
-                    <input name="company" class="form-control" value="{{$exp->company}}" type="text" required>
+                    <input name="company" class="form-control @error('company') is-invalid @enderror" value="{{$exp->company}}" type="text">
+                    @error('company')
+                    <div class="invalid-feedback">
+                        These forms must be filled
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
         
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="job">Job title</label>
-                    <input name="job" rows="3" value="{{$exp->job}}" class="form-control" required>
+                    <input name="job" rows="3" value="{{$exp->job}}" class="form-control @error('job') is-invalid @enderror">
+                    @error('job')
+                    <div class="invalid-feedback">
+                        These forms must be filled
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
 
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="start">Start date</label>
-                    <input type="date" class="form-control" name="start" id="" value="{{$exp->start}}" required>
+                    <input type="date" class="form-control @error('start') is-invalid @enderror" name="start" id="" value="{{$exp->start}}">
+                    @error('start')
+                    <div class="invalid-feedback">
+                        These forms must be filled
+                    </div>    
+                    @enderror
                 </div><!-- col -->
                 <div class="col-lg">
                     <label for="end">End date</label>
-                    <input name="end" class="form-control" value="{{$exp->end}}" type="date" required>
+                    <input name="end" class="form-control @error('end') is-invalid @enderror" value="{{$exp->end}}" type="date">
+                    @error('end')
+                    <div class="invalid-feedback">
+                        These forms must be filled
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
             <div class="row  mg-t-20">
                 <div class="col-lg">
                     <label for="details">Details</label>
-                    <input name="details" class="form-control" value="{{$exp->details}}" type="text">
+                    <input name="details" class="form-control @error('details') is-invalid @enderror" value="{{$exp->details}}" type="text">
+                    @error('details')
+                    <div class="invalid-feedback">
+                        These forms must be filled
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
 

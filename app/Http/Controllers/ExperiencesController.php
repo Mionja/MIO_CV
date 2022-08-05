@@ -22,6 +22,14 @@ class ExperiencesController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'company' =>  'required'  ,
+            'job' => 'required'   ,
+            'start'  => 'required'   ,
+            'end'   => 'required'   ,
+            'details' => 'required'  
+        ]);
+
         $company = $request-> company;
         $job = $request-> job;
         $start = $request-> start;
@@ -36,7 +44,7 @@ class ExperiencesController extends Controller
             'details'=>$details,
         ]);
 
-        return redirect()->route('experience.index');
+        return redirect()->route('experience.index')->with('success', "Enregistré");
     }
 
     public function show($id)
@@ -55,6 +63,14 @@ class ExperiencesController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'company' =>  'required'  ,
+            'job' => 'required'   ,
+            'start'  => 'required'   ,
+            'end'   => 'required'   ,
+            'details' => 'required'  
+        ]);
+
         $exp = Experience::find($id);
 
         $company = $request-> company;
@@ -71,7 +87,7 @@ class ExperiencesController extends Controller
             'details'=>$details,
         ]);
 
-        return redirect()->route('experience.index');
+        return redirect()->route('experience.index')->with('warning', "Modifié");
     }
 
 

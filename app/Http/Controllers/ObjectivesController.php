@@ -24,6 +24,6 @@ class ObjectivesController extends Controller
         $objective = $request->objective;
         $obj->update(['objective'=> $objective]);
 
-        return redirect()->route('objective.index');
+        return redirect()->route('objective.index')->with('success', "Enregistré");
     }
 }

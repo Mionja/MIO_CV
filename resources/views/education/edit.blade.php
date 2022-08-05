@@ -17,28 +17,28 @@
         <div class="row">
             <div class="col-lg">
                 <label for="couse">Course / Degree</label>
-                <input name="degree" class="form-control" value="{{ $education -> degree }}" type="text" >
+                <input name="degree" class="form-control @error('degree') is-invalid @enderror" value="{{ $education -> degree }}" type="text" >
             </div><!-- col -->
         </div><!-- row -->
     
         <div class="row mg-t-20">
             <div class="col-lg">
                 <label for="school">School / University</label>
-                <input name="school" rows="3" value="{{ $education -> school }}" class="form-control" >
+                <input name="school" rows="3" value="{{ $education -> school }}" class="form-control @error('school') is-invalid @enderror" >
             </div><!-- col -->
         </div><!-- row -->
 
         <div class="row mg-t-20">
             <div class="col-lg">
                 <label for="grade">Grade / Score</label>
-                <input type="text" class="form-control" name="grade" id="" value="{{$education -> grade}}" >
+                <input type="text" class="form-control @error('grade') is-invalid @enderror" name="grade" id="" value="{{$education -> grade}}" >
             </div><!-- col -->
         </div><!-- row -->
 
         <div class="row  mg-t-20">
             <div class="col-lg">
                 <label for="year">Year</label>
-                <input name="year" class="form-control" value="{{$education -> year}}" type="text" >
+                <input name="year" class="form-control @error('year') is-invalid @enderror" value="{{$education -> year}}" type="text" >
             </div><!-- col -->
         </div><!-- row -->
         <div class="row  mg-t-20">

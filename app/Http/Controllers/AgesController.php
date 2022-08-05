@@ -16,11 +16,14 @@ class AgesController extends Controller
     
     public function update(Request $request, $id = 1)
     {
+        $request->validate([
+            'age' =>  'required'  
+        ]);
         $a = Age::find($id);
 
         $age = $request -> age;
         $a -> update(['age'=> $age]);
         
-        return redirect()->route('age');
+        return redirect()->route('age')->with('success', "Enregistré");
     }
 }

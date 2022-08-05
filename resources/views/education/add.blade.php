@@ -16,28 +16,48 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="couse">Course / Degree</label>
-                    <input name="degree" class="form-control" value="" type="text" required>
+                    <input name="degree" class="form-control @error('degree') is-invalid @enderror" value="" type="text">
+                    @error('degree')
+                    <div class="invalid-feedback">
+                        Ce champ est obligatoire
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
         
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="school">School / University</label>
-                    <input name="school" rows="3" value="" class="form-control" required>
+                    <input name="school" rows="3" value="" class="form-control @error('school') is-invalid @enderror">
+                    @error('school')
+                    <div class="invalid-feedback">
+                        Ce champ est obligatoire
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
 
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="grade">Grade / Score</label>
-                    <input type="text" class="form-control" name="grade" id="" value="" required>
+                    <input type="text" class="form-control @error('grade') is-invalid @enderror" name="grade" id="" value="">
+                    @error('grade')
+                    <div class="invalid-feedback">
+                        Ce champ est obligatoire
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
 
             <div class="row  mg-t-20">
                 <div class="col-lg">
                     <label for="year">Year</label>
-                    <input name="year" class="form-control" value="" type="text" required>
+                    <input name="year" class="form-control @error('year') is-invalid @enderror" value="" type="text">
+                    @error('year')
+                    <div class="invalid-feedback">
+                        Ce champ est obligatoire
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
             <div class="row  mg-t-20">

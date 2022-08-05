@@ -17,7 +17,12 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="age" class="mb-3"><h4> Your age</h4></label>
-                    <input name="age" class="form-control" value="{{ $age->age }}" type="text" required>
+                    <input name="age" class="form-control @error('age') is-invalid @enderror" value="{{ $age->age }}" type="text">
+                    @error('age')
+                    <div class="invalid-feedback">
+                        You must fill this before saving
+                    </div>    
+                    @enderror
                 </div><!-- col -->
             </div><!-- row -->
         </div>

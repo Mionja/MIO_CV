@@ -20,6 +20,14 @@ class EducationsController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'degree' =>  'required'  ,
+            'school' => 'required'   ,
+            'grade'  => 'required'   ,
+            'year'   => 'required'    
+        ]);
+
+
         $degree = $request-> degree;
         $school = $request-> school;
         $grade = $request-> grade;
@@ -31,7 +39,8 @@ class EducationsController extends Controller
             'grade' => $grade,
             'year' => $year,
         ]);
-        return redirect()->route('education.index');
+
+        return redirect()->route('education.index')->with('success', "Enregistré");
     }
 
     public function edit($id)
@@ -42,6 +51,14 @@ class EducationsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'degree' =>  'required'  ,
+            'school' => 'required'   ,
+            'grade'  => 'required'   ,
+            'year'   => 'required'    
+        ]);
+
+
         $education = Education::find($id);
 
         $degree = $request-> degree;
@@ -51,7 +68,7 @@ class EducationsController extends Controller
 
         $education -> update(['degree'=>$degree,'school'=>$school, 'grade'=> $grade, 'year'=> $year ]);
 
-        return redirect() -> route('education.index');
+        return redirect() -> route('education.index')->with('success', "Modifié");
     }
 
     public function destroy($id)

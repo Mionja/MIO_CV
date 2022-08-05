@@ -41,13 +41,17 @@ class Soft_skillsController extends Controller
 
     public function show(Request $request, $id)
     {
+        $request->validate([
+            'name' =>  'required'  
+        ]);
+
         $s_skill = SoftSkill::find($id);
 
         $name = $request-> name;
 
         $s_skill->update(['name'=>$name,]);
 
-        return redirect()->route('s_skill.index');
+        return redirect()->route('s_skill.index')->with('success', "Modifié");
     }
 
 
