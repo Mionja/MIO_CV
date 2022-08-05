@@ -50,7 +50,7 @@
                             <img src="img/{{$perso_details->photo}}" alt="photo" class="mr-3 mb-3 rounded-circle border" style="width:100px; height:100px;">
                         </div>
                         <div class="col-4">
-                            <input name="photo" class="form-control mt-4" type="file"  required>
+                            <input name="photo" class="form-control mt-4" type="file" value="" required>
                         </div>
                     </div>
                 </div><!-- col -->

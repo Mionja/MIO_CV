@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Perso_detail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class Perso_detailsController extends Controller
 {
@@ -23,8 +24,17 @@ class Perso_detailsController extends Controller
         $email = $request->email;
         $num = $request->num;
 
-        $name = $request->file('photo')->getClientOriginalName();
-        $request->file('photo')->move('img/', $name);
+        if ($request->hasFile('photo')) {
+            $destination = "img/".$perso_details->photo;
+            if (File::exists($destination)) 
+            {
+                File::delete($destination);
+            }
+
+            $name = $request->file('photo')->getClientOriginalName();
+            $request->file('photo')->move('img/', $name);
+
+        }
 
         $perso_details->update(['nom'=>$nom, 'address'=>$address, 'email'=>$email, 'num'=>$num, 'photo'=>$name]);            
 
