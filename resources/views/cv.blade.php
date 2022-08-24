@@ -28,7 +28,7 @@
 {{-- //---------------------------------------------------------------------------------------------------- --}}
     <div class="container mt-5 w-100">
         <div class="media border p-3 bg-dark text-light">
-            <img src="img/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
+            <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
             <div class="container mt-3" >
                 <h1>{{$perso_details->nom}}</h1>
                     <ul class="nav mt-5">

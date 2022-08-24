@@ -20,6 +20,7 @@
     <div class="br-sideleft sideleft-scrollbar ">
       <ul class="br-sideleft-menu">
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">  </label>
+        
         <li class="br-menu-item">
           <a href="{{route('home')}}" class="br-menu-link">
             <img src="{{asset('img/house.png')}}" class="menu-item-icon wd-25">

@@ -47,10 +47,10 @@
                     <label for="num" class="mt-5">Your profile picture</label>
                     <div class="row">
                         <div class="col-2">
-                            <img src="img/{{$perso_details->photo}}" alt="photo" class="mr-3 mb-3 rounded-circle border" style="width:100px; height:100px;">
+                            <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mb-3 rounded-circle border" style="width:100px; height:100px;">
                         </div>
                         <div class="col-4">
-                            <input name="photo" class="form-control mt-4" type="file" value="" required>
+                            <input name="photo" class="form-control mt-4" type="file" value="">
                         </div>
                     </div>
                 </div><!-- col -->

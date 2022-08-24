@@ -24,19 +24,22 @@ class Perso_detailsController extends Controller
         $email = $request->email;
         $num = $request->num;
 
-        if ($request->hasFile('photo')) {
-            $destination = "img/".$perso_details->photo;
-            if (File::exists($destination)) 
-            {
-                File::delete($destination);
-            }
+        if ($request->hasFile('photo')) 
+        {
+            $destination = "img/profile_pic/".$perso_details->photo; 
+            File::delete($destination); 
 
             $name = $request->file('photo')->getClientOriginalName();
-            $request->file('photo')->move('img/', $name);
+            $request->file('photo')->move('img/profile_pic/', $name);
 
+            $perso_details->update(['nom'=>$nom, 'address'=>$address, 'email'=>$email, 'num'=>$num, 'photo'=>$name]);            
+        }
+        else
+        {
+            $perso_details->update(['nom'=>$nom, 'address'=>$address, 'email'=>$email, 'num'=>$num]);            
         }
 
-        $perso_details->update(['nom'=>$nom, 'address'=>$address, 'email'=>$email, 'num'=>$num, 'photo'=>$name]);            
+        
 
 
         return redirect()->route('perso_details.index');
