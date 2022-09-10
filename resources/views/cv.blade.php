@@ -18,7 +18,7 @@
 
 <body>
     <div class="container-fluid mt-3">
-        <a href="{{route('home')}}" class="btn btn-dark">Home</a>
+        <a href="{{route('age.index')}}" class="btn btn-dark">Home</a>
         <a href="{{route('perso_details.index')}}" class="btn btn-success">Back</a>
 
         <marquee behavior="20" direction="right" class="mt-5">Bouuuuuuuuuuu</marquee>

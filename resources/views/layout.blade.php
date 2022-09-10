@@ -22,9 +22,9 @@
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">  </label>
         
         <li class="br-menu-item">
-          <a href="{{route('home')}}" class="br-menu-link">
+          <a href="{{route('logout')}}" class="br-menu-link">
             <img src="{{asset('img/house.png')}}" class="menu-item-icon wd-25">
-            <span class="menu-item-label ">HOME</span>
+            <span class="menu-item-label ">Logout</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
 
@@ -70,7 +70,7 @@
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">More sections</label>
 
         <li class="br-menu-item">
-          <a href="{{route('age')}}" class="br-menu-link ">
+          <a href="{{route('age.index')}}" class="br-menu-link ">
             <img src="{{asset('img/age.png')}}" alt="img" class="menu-item-icon  wd-30">
             <span class="menu-item-label">AGE</span>
           </a><!-- br-menu-link -->
