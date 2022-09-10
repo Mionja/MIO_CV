@@ -28,7 +28,12 @@
 {{-- //---------------------------------------------------------------------------------------------------- --}}
     <div class="container mt-5 w-100">
         <div class="media border p-3 bg-dark text-light">
-            <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
+            @foreach($perso_details as $perso_details)
+                @if($perso_details->photo)
+                <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
+                @else
+                <img src="{{asset('img/age.png')}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
+                @endif
             <div class="container mt-3" >
                 <h1>{{$perso_details->nom}}</h1>
                     <ul class="nav mt-5">
@@ -50,9 +55,13 @@
                           </span>
                         </li>
                       </ul>
-                    
+                        
+            @endforeach
+            
                 <div class="row ml-3 mt-4">
-                    {{$a->age}}
+                    @foreach($a as $a)
+                        {{$a->age}}
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -94,7 +103,9 @@
                 <div class="col">
                     <div class="container mt-3">
                         <h5 class="bg-dark text-light">Objective </h5>
+                        @foreach($obj as $obj)
                             <p class="ml-4">{{$obj->objective}}</p>
+                        @endforeach
                     </div>
                     <div class="container">
                         <h5 class="bg-dark text-light">Education</h5>

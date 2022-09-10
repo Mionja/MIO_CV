@@ -37,5 +37,5 @@ function ()
     Route::resource('language', LanguagesController::class);
     Route::resource('age', AgesController::class);
     
-    Route::get('/cv', [ResumesController::class, 'index'])->name('cv');
+    Route::get('/resume', [ResumesController::class, 'index'])->name('resume');
 });

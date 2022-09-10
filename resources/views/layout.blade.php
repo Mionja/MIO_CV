@@ -20,14 +20,6 @@
     <div class="br-sideleft sideleft-scrollbar ">
       <ul class="br-sideleft-menu">
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">  </label>
-        
-        <li class="br-menu-item">
-          <form action="{{route('logout')}}" method="post" class="br-menu-link">
-            @csrf
-            <img src="{{asset('img/house.png')}}" class="menu-item-icon wd-25">
-            <button type="submit" class="menu-item-label btn btn-dark">Logout</button>
-          </form><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
 
         <label class="sidebar-label pd-x-10 mg-t-20 op-3 mt-5">Sections</label>
         <li class="br-menu-item">
@@ -107,7 +99,7 @@
         
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">--------------------------------------------</label>
         <li class="br-menu-item">
-          <a href="{{route('cv')}}" class="br-menu-link">
+          <a href="{{route('resume')}}" class="br-menu-link">
             
             <span class="menu-item-label ml-5">View CV</span>
           </a><!-- br-menu-link -->
@@ -126,7 +118,21 @@
       <div class="br-header-left">
         <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href="#"><i class="icon ion-navicon-round"></i></a></div>
         <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="#"><i class="icon ion-navicon-round"></i></a></div>
+        <div class="text-light h2 mt-3 ml-5">
+          {{auth()->user()->name}}
+        </div>
       </div><!-- br-header-left -->
+
+      <div class="br-header-right">
+        <nav class="nav">
+            <form action="{{route('logout')}}" method="post" class="br-menu-link">
+              @csrf
+              <button type="submit" class="mr-4 btn btn-outline-danger">Logout</button>
+            </form>
+            
+        </nav>
+      </div>
+
     </div><!-- br-header -->
     <!-- ########## FIN ENTETE ########## -->
 

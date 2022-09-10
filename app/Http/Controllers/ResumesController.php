@@ -18,16 +18,22 @@ class ResumesController extends Controller
 {
     public function index()
     {
-        $h_skill = HardSkill::all();
-        $formations = Formation::all();
-        $experiences = Experience::all();
-        $languages = Language::all();
-        $s_skill = SoftSkill::all();
-        $activities = Activity::all();
-        $educations = Education::all();
-        $perso_details = Perso_detail::where('id', '1')->first();
-        $obj = Objective::where('id', '1')->first();
-        $a = Age::where('id', '1')->first();
-        return view("cv", compact('perso_details', 'educations', 'obj', 'a', 's_skill', 'activities', 'languages', 'experiences','formations','h_skill'));
+        $h_skill = HardSkill::with('User')->where('user_id', auth()->user()->id)->get();
+        $formations = Formation::with('User')->where('user_id', auth()->user()->id)->get();
+        $experiences = Experience::with('User')->where('user_id', auth()->user()->id)->get();
+        $languages = Language::with('User')->where('user_id', auth()->user()->id)->get();
+        $s_skill = SoftSkill::with('User')->where('user_id', auth()->user()->id)->get();
+        $activities = Activity::with('User')->where('user_id', auth()->user()->id)->get();
+        $educations = Education::with('User')->where('user_id', auth()->user()->id)->get();
+        $obj = Objective::with('User')->where('user_id', auth()->user()->id)->get();
+        $a = Age::with('User')->where('user_id', auth()->user()->id)->get();
+
+        $perso_details = Perso_detail::with('User')->where('user_id', auth()->user()->id)->get();
+        if ($perso_details->isNotEmpty()) 
+        {
+            return view("resume.index", compact('perso_details', 'educations', 'obj', 'a', 's_skill', 'activities', 'languages', 'experiences','formations','h_skill'));    
+        }
+        return view('resume.nothing');
+        
     }
 }

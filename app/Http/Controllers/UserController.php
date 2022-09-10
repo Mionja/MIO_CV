@@ -28,7 +28,7 @@ class UserController extends Controller
  
          if(auth()->attempt($formFields)) {
              $request->session()->regenerate();
-             return redirect()->route('age.index')->with('success', 'You are now logged in!');
+             return redirect()->route('perso_details.index')->with('success', 'You are now logged in!');
          }
  
          return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

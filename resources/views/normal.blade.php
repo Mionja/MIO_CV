@@ -12,8 +12,8 @@
   </head>
 
   <body style="background-color:rgb(95, 112, 160)">
-@yield('main')
-@include('flash-message')
+    @include('flash-message')
+    @yield('main')
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/datepicker.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
