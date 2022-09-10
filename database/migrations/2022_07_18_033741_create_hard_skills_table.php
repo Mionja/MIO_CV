@@ -15,6 +15,7 @@ class CreateHardSkillsTable extends Migration
     {
         Schema::create('hard_skills', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->integer('level');
             $table->timestamps();

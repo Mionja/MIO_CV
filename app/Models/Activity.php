@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['user_id','name'];
     use HasFactory;
+
+    //Relationship to user
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

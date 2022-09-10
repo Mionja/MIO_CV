@@ -47,7 +47,7 @@ class Perso_detailsController extends Controller
         return redirect()->route('perso_details.index');
     }
    
-    public function update (Request $request, $id=1)
+    public function update (Request $request, $id)
     {
         $perso_details = Perso_detail::find($id);
 

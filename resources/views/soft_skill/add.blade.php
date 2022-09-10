@@ -11,6 +11,7 @@
 @section('main-content')
 <form action="{{route('s_skill.store')}}" method="POST" class="black-form">
     @csrf
+    <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
     <div class="br-pagebody">
         <div class="br-section-wrapper">
             <div class="row">

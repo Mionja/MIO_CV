@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Objective extends Model
 {
-    protected $fillable = ['objective'];
+    protected $fillable = ['user_id','objective'];
     use HasFactory;
+
+    //Relationship to user
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

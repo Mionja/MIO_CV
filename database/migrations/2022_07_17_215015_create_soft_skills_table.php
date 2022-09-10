@@ -15,6 +15,7 @@ class CreateSoftSkillsTable extends Migration
     {
         Schema::create('soft_skills', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->timestamps();
         });

@@ -9,7 +9,7 @@ class EducationsController extends Controller
 {
     public function index()
     {
-        $educations = Education::orderBy('id')->paginate(3);
+        $educations = Education::with('User')->where('user_id', auth()->user()->id)->get()->paginate(3);
         return view('education.index', compact('educations'));
     }
 
@@ -24,7 +24,8 @@ class EducationsController extends Controller
             'degree' =>  'required'  ,
             'school' => 'required'   ,
             'grade'  => 'required'   ,
-            'year'   => 'required'    
+            'year'   => 'required'   ,
+            'user_id'=> 'required'    
         ]);
 
 
@@ -32,8 +33,10 @@ class EducationsController extends Controller
         $school = $request-> school;
         $grade = $request-> grade;
         $year = $request-> year;
+        $user_id = $request-> user_id;
 
         Education::create([
+            'user_id' => $user_id,
             'degree' => $degree,
             'school' => $school,
             'grade' => $grade,

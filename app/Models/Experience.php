@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Experience extends Model
 {
-    protected $fillable = ['company', 'job', 'start', 'end', 'details'];
+    protected $fillable = ['user_id','company', 'job', 'start', 'end', 'details'];
     use HasFactory;
+
+    //Relationship to user
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

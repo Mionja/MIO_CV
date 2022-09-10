@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Formation extends Model
 {
-    protected $fillable = ['name', 'about', 'start', 'end'];
+    protected $fillable = ['user_id','name', 'about', 'start', 'end'];
     use HasFactory;
+
+    //Relationship to user
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

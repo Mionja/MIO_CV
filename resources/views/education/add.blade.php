@@ -12,6 +12,7 @@
 
 <form action="{{route('education.store')}}" method="POST" class="black-form">
     @csrf
+        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
         <div class="br-section-wrapper">
             <div class="row">
                 <div class="col-lg">
