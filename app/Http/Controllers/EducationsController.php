@@ -9,7 +9,7 @@ class EducationsController extends Controller
 {
     public function index()
     {
-        $educations = Education::with('User')->where('user_id', auth()->user()->id)->get()->paginate(3);
+        $educations = Education::with('User')->where('user_id', auth()->user()->id)->paginate(3);
         return view('education.index', compact('educations'));
     }
 

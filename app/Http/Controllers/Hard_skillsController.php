@@ -9,7 +9,7 @@ class Hard_skillsController extends Controller
 {
     public function index()
     {
-        $h_skill = HardSkill::all();
+        $h_skill = HardSkill::with('User')->where('user_id', auth()->user()->id)->get();
         return view('hard_skill.index', compact('h_skill'));
     }
     public function create()
@@ -21,8 +21,10 @@ class Hard_skillsController extends Controller
     {
         $name = $request-> name;
         $level = $request-> level;
+        $user_id = $request-> user_id;
 
         HardSkill::create([
+            'user_id' => $user_id,
             'name'=>$name,
             'level'=>$level,
         ]);

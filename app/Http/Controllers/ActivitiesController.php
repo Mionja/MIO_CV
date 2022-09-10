@@ -9,7 +9,7 @@ class ActivitiesController extends Controller
 {
     public function index()
     {
-        $activity = Activity::orderBy('id')->paginate(5);
+        $activity = Activity::with('User')->where('user_id', auth()->user()->id)->paginate(5);
         return view('activity.index', compact('activity'));
     }
     public function create()
@@ -19,10 +19,12 @@ class ActivitiesController extends Controller
 
     public function store(Request $request)
     {
-        $name = $request-> name;;
+        $name = $request-> name;
+        $user_id = $request-> user_id;
 
         activity::create([
             'name'=>$name,
+            'user_id' => $user_id,
         ]);
 
         return redirect()->route('activity.index');

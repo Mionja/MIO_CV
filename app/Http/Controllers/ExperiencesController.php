@@ -10,7 +10,7 @@ class ExperiencesController extends Controller
 
     public function index()
     {
-        $experiences = Experience::orderBy('id')->paginate(3);
+        $experiences = Experience::with('User')->where('user_id', auth()->user()->id)->paginate(3);
         return view('experience.index', compact('experiences'));
     }  
 
@@ -23,11 +23,12 @@ class ExperiencesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'company' =>  'required'  ,
-            'job' => 'required'   ,
-            'start'  => 'required'   ,
-            'end'   => 'required'   ,
-            'details' => 'required'  
+            'company' =>  'required'    ,
+            'job' => 'required'         ,
+            'start'  => 'required'      ,
+            'end'   => 'required'       ,
+            'details' => 'required'     ,
+            'user_id' => 'required'     
         ]);
 
         $company = $request-> company;
@@ -35,8 +36,10 @@ class ExperiencesController extends Controller
         $start = $request-> start;
         $end = $request-> end;
         $details = $request-> details;
+        $user_id = $request-> user_id;
 
         Experience::create([
+            'user_id' => $user_id,
             'company'=>$company,
             'job'=>$job,
             'start'=>$start,

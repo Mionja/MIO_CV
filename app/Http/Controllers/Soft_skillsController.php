@@ -9,7 +9,7 @@ class Soft_skillsController extends Controller
 {
     public function index()
     {
-        $s_skill = SoftSkill::orderBy('id')->paginate(5);
+        $s_skill = SoftSkill::with('User')->where('user_id', auth()->user()->id)->paginate(5);
         return view('soft_skill.index', compact('s_skill'));
     }
     public function create()
@@ -20,11 +20,14 @@ class Soft_skillsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user_id' => 'required'     ,
             'name' =>  'required'  
         ]);
+        $user_id = $request-> user_id;
         $name = $request-> name;;
 
         SoftSkill::create([
+            'user_id' => $user_id,
             'name'=>$name,
         ]);
 

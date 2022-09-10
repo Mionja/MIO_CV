@@ -9,7 +9,7 @@ class LanguagesController extends Controller
 {
     public function index()
     {
-        $languages = Language::orderBy('id')->paginate(5);
+        $languages = Language::with('User')->where('user_id', auth()->user()->id)->paginate(5);
         return view('language.index', compact('languages'));
     }
     public function create()
@@ -19,9 +19,11 @@ class LanguagesController extends Controller
 
     public function store(Request $request)
     {
-        $name = $request-> name;;
+        $name = $request-> name;
+        $user_id = $request-> user_id;
 
         Language::create([
+            'user_id' => $user_id,
             'name'=>$name,
         ]);
 

@@ -9,7 +9,7 @@ class FormationsController extends Controller
 {
     public function index()
     {
-        $formations = Formation::orderBy('id')->paginate(3);
+        $formations = Formation::with('User')->where('user_id', auth()->user()->id)->paginate(3);
         return view('formation.index', compact('formations'));
     }
     public function create()
@@ -23,8 +23,10 @@ class FormationsController extends Controller
         $about = $request-> about;
         $start = $request-> start;
         $end = $request-> end;
+        $user_id = $request-> user_id;
 
         Formation::create([
+            'user_id' => $user_id,
             'name'=>$name,
             'about'=>$about,
             'start'=>$start,
