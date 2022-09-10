@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Age;
+use App\Models\Perso_detail;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -44,7 +45,13 @@ class User extends Authenticatable
     ];
 
     // Relationship with age
-    public function tasks() 
+    public function perso_detail() 
+    {
+        return $this->hasMany(Perso_detail::class, 'user_id');
+    }
+
+    // Relationship with age
+    public function age() 
     {
         return $this->hasMany(Age::class, 'user_id');
     }

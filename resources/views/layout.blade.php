@@ -22,10 +22,11 @@
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">  </label>
         
         <li class="br-menu-item">
-          <a href="{{route('logout')}}" class="br-menu-link">
+          <form action="{{route('logout')}}" method="post" class="br-menu-link">
+            @csrf
             <img src="{{asset('img/house.png')}}" class="menu-item-icon wd-25">
-            <span class="menu-item-label ">Logout</span>
-          </a><!-- br-menu-link -->
+            <button type="submit" class="menu-item-label btn btn-dark">Logout</button>
+          </form><!-- br-menu-link -->
         </li><!-- br-menu-item -->
 
         <label class="sidebar-label pd-x-10 mg-t-20 op-3 mt-5">Sections</label>

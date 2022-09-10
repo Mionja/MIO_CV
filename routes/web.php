@@ -22,17 +22,20 @@ Route::get('/register', [UserController::class, 'create'])->name('register');
 Route::post('/users', [UserController::class, 'store'])->name('store_user');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::resource('perso_details', Perso_detailsController::class);
-Route::resource('education', EducationsController::class);
-Route::resource('experience', ExperiencesController::class);
-Route::resource('formation', FormationsController::class);
-Route::resource('objective', ObjectivesController::class);
-Route::resource('h_skill', Hard_skillsController::class);
-Route::resource('s_skill', Soft_skillsController::class);
-Route::resource('activity', ActivitiesController::class);
-Route::resource('education', EducationsController::class);
-Route::resource('language', LanguagesController::class);
-Route::resource('age', AgesController::class)->middleware('auth');
-
-Route::get('/cv', [ResumesController::class, 'index'])->name('cv');
-
+Route::group(['middleware'=> 'auth:sanctum'],
+function () 
+{
+    Route::resource('perso_details', Perso_detailsController::class);
+    Route::resource('education', EducationsController::class);
+    Route::resource('experience', ExperiencesController::class);
+    Route::resource('formation', FormationsController::class);
+    Route::resource('objective', ObjectivesController::class);
+    Route::resource('h_skill', Hard_skillsController::class);
+    Route::resource('s_skill', Soft_skillsController::class);
+    Route::resource('activity', ActivitiesController::class);
+    Route::resource('education', EducationsController::class);
+    Route::resource('language', LanguagesController::class);
+    Route::resource('age', AgesController::class);
+    
+    Route::get('/cv', [ResumesController::class, 'index'])->name('cv');
+});
