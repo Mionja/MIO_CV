@@ -45,4 +45,10 @@ class ObjectivesController extends Controller
 
         return redirect()->route('objective.index')->with('success', "Edited");
     }
+
+    public function destroy($id)
+    {
+        Objective::find($id)->delete();
+        return redirect()->route('objective.index');
+    }
 }
