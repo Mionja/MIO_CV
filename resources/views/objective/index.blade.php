@@ -10,6 +10,12 @@
 
 @section('main-content')
 @foreach($obj as $obj)
+<form action="{{route('objective.destroy', $obj->id)}}" method="POST">
+    @csrf
+    @method('delete')
+    <button type="submit" class="btn btn-danger float-right mr-5">Empty</button>
+</form>
+
 <form action="{{route('objective.update', $obj->id)}}" method="POST" class="black-form">
     @csrf
     @method('put')
@@ -18,12 +24,6 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="objective"><h4>Your Objective</h4> </label>
-                    <form action="{{route('objective.destroy', $obj->id)}}" method="POST">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-sm btn-danger float-right">Empty</button>
-                    </form>
-
                     <textarea name="objective" class="form-control mt-3 @error('objective') is-invalid @enderror" type="text" style="height: 150px">{{ $obj->objective }}</textarea>
                     @error('objective')
                     <div class="invalid-feedback">

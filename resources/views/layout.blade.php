@@ -57,7 +57,13 @@
             <img src="{{asset('img/objective.png')}}" alt="img" class="menu-item-icon  wd-30">
             <span class="menu-item-label">OBJECTIVE</span>
           </a><!-- br-menu-link -->
-          
+        </li>
+        
+        <li class="br-menu-item">
+          <a href="{{route('h_skill.index')}}" class="br-menu-link ">
+            <img src="{{asset('img/skill.png')}}" alt="img" class="menu-item-icon wd-30">
+            <span class="menu-item-label "> HARD SKILLS</span>
+          </a><!-- br-menu-link -->
         </li>
 
         <label class="sidebar-label pd-x-10 mg-t-20 op-3">More sections</label>
@@ -66,13 +72,6 @@
           <a href="{{route('age.index')}}" class="br-menu-link ">
             <img src="{{asset('img/age.png')}}" alt="img" class="menu-item-icon  wd-30">
             <span class="menu-item-label">AGE</span>
-          </a><!-- br-menu-link -->
-        </li>
-
-        <li class="br-menu-item">
-          <a href="{{route('h_skill.index')}}" class="br-menu-link ">
-            <img src="{{asset('img/skill.png')}}" alt="img" class="menu-item-icon wd-30">
-            <span class="menu-item-label "> HARD SKILLS</span>
           </a><!-- br-menu-link -->
         </li>
 
@@ -125,7 +124,7 @@
 
       <div class="br-header-right">
         <nav class="nav">
-            <form action="{{route('logout')}}" method="post" class="br-menu-link">
+            <form action="{{route('logout')}}" method="post" class="">
               @csrf
               <button type="submit" class="mr-4 btn btn-outline-danger">Logout</button>
             </form>

@@ -4,7 +4,7 @@
 
    
 <div class="container-fluid mt-3 text-center">
-    <form action="{{route('logout')}}" method="post" class="br-menu-link">
+      <form action="{{route('logout')}}" method="post">
         @csrf
         <button type="submit" class="btn btn-danger">Logout</button>
       </form>
@@ -17,7 +17,7 @@
         <div class="profile-container">
             @foreach($perso_details as $perso_details)
                 @if($perso_details->photo)
-                <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:auto;">
+                <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" width="200" height="200">
                 @endif
             
             <h2 class="name">{{$perso_details->nom}}</h2>
@@ -42,6 +42,17 @@
         </div><!--//contact-container-->
             @endforeach
 
+
+        @if($s_skill->isNotEmpty())
+        <div class="interests-container container-block">
+            <h2 class="container-block-title">Soft Skills</h2>
+            <ul class="list-unstyled interests-list">
+                @foreach($s_skill as $s_skill)
+                <li>{{$s_skill->name}}</li>
+                @endforeach
+            </ul>
+        </div><!--//interests-->
+        @endif
 
         @if($languages->isNotEmpty())
         <div class="languages-container container-block">
@@ -121,24 +132,24 @@
         </section><!--//section-->
         @endif
 
-    @if($formations->isNotEmpty())
-        <section class="section experiences-section">
-            <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-archive"></i></span>Formation</h2>
-            @foreach($formations as $formation)
-            <div class="item">
-                <div class="meta">
-                    <div class="upper-row">
-                        <h3 class="job-title">{{$formation -> name}}</h3>
-                        <div class="time">{{$formation -> start}} - {{$formation -> end}}</div>
-                    </div><!--//upper-row-->
-                </div><!--//meta-->
-                <div class="details">
-                    <p>{{$formation -> about}}</p>  
-                </div><!--//details-->
-            </div><!--//item-->
-            @endforeach
-        </section><!--//section-->
-        @endif
+        @if($formations->isNotEmpty())
+            <section class="section experiences-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-archive"></i></span>Formation</h2>
+                @foreach($formations as $formation)
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">{{$formation -> name}}</h3>
+                            <div class="time">{{$formation -> start}} - {{$formation -> end}}</div>
+                        </div><!--//upper-row-->
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>{{$formation -> about}}</p>  
+                    </div><!--//details-->
+                </div><!--//item-->
+                @endforeach
+            </section><!--//section-->
+            @endif
 
 
         @if($h_skill->isNotEmpty())

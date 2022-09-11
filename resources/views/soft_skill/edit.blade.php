@@ -16,7 +16,7 @@
         <div class="br-section-wrapper">
             <div class="row">
                 <div class="col-lg">
-                    <label for="name">Your Activity</label>
+                    <label for="name">Your Soft Skill</label>
                     <input name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $s_skill->name }}" type="text" required>
                     @error('name')
                     <div class="invalid-feedback">
