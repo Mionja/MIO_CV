@@ -1,9 +1,7 @@
 # MIO_CV
 New project to build a CV with Laravel
 
-This is my first personal project with laravel. It consists in creating a CV by just filling the forms and not filling them if you think it's not necessary.
-
-This project of mine is still on-going, so I'm still correcting every default step by step while leaning new things.
+This is my personal project with laravel. It consists on creating a CV by just filling the forms and not filling them if you think it's not necessary.
 
 
 A little overview:
@@ -15,4 +13,6 @@ A little overview:
 
 
 ![image](https://user-images.githubusercontent.com/105538414/182940932-3acd7fce-882f-4a27-8a7d-6a9b59fd3584.png)
+
+
 

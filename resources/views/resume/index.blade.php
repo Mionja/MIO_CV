@@ -1,179 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">  
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
+@extends('normal')
 
-    <title>MIO CV</title>
-    
-    <link href="{{ asset('css/all.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('css/css/ionicons.min.css') }}" rel="stylesheet">
- 
-    <link rel="stylesheet" href="{{ asset('css/bracket.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/styleCV.css') }}">
-</head>
+@section('main')
 
-<body>
-    <div class="container-fluid mt-3">
-        <a href="{{route('age.index')}}" class="btn btn-dark">Home</a>
-        <a href="{{route('perso_details.index')}}" class="btn btn-success">Back</a>
-
-        <marquee behavior="20" direction="right" class="mt-5">Bouuuuuuuuuuu</marquee>
-    </div>
-
-    
+   
+<div class="container-fluid mt-3 text-center">
+    <a href="{{route('logout')}}" class="btn btn-danger">Log out</a>
+    <a href="{{route('perso_details.index')}}" class="btn btn-dark">Back</a>
+</div>
 {{-- //---------------------------------------------------------------------------------------------------- --}}
-    <div class="container mt-5 w-100">
-        <div class="media border p-3 bg-dark text-light">
+    
+<div class="wrapper mt-lg-5">
+    <div class="sidebar-wrapper">
+        <div class="profile-container">
             @foreach($perso_details as $perso_details)
                 @if($perso_details->photo)
-                <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
-                @else
-                <img src="{{asset('img/age.png')}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:180px;">
+                <img src="img/profile_pic/{{$perso_details->photo}}" alt="photo" class="mr-3 mt-3 rounded-circle border" style="width:180px;height:auto;">
                 @endif
-            <div class="container mt-3" >
-                <h1>{{$perso_details->nom}}</h1>
-                    <ul class="nav mt-5">
-                        <li class="nav-item">
-                          <span class="nav-link text-light">
-                            <img src="{{ asset('img/mail.png') }}" alt="" style="width: 22px;">
-                            {{$perso_details->email}}</span>
-                        </li>
-                        <li class="nav-item">
-                          <span class="nav-link text-light">
-                            <img src="{{ asset('img/phone.png') }}" alt="" style="width: 22px;">
-                            {{$perso_details->num}}
-                          </span>
-                        </li>
-                        <li class="nav-item">
-                          <span class="nav-link text-light">
-                            <img src="{{ asset('img/home.png') }}" alt="" style="width: 22px;">
-                            {{$perso_details->address}}
-                          </span>
-                        </li>
-                      </ul>
-                        
-            @endforeach
             
-                <div class="row ml-3 mt-4">
-                    @foreach($a as $a)
-                        {{$a->age}}
-                    @endforeach
-                </div>
-            </div>
-        </div>
+            <h2 class="name">{{$perso_details->nom}}</h2>
+            <h3 class="tagline">Full Stack Developer</h3>
+            
+        </div><!--//profile-container-->
         
-{{-- //---------------------------------------------------------------------------------------------------- --}}        
-        <div class="media border">
-            <div class="row">
-{{-- CONTENU DE GAUCHE --}}
-                <div class="sideleft bg-dark text-light ml-3">
-                    <div class="container mt-3 mr-5">
-                       <h5 class="bg-info text-black-50">Soft-skills</h5> 
-                        <ul>
-                        @foreach($s_skill as $s_skill)
-                            <li>{{$s_skill->name}}</li>                            
-                        @endforeach
-                        </ul>
-                    </div>
+        <div class="contact-container container-block">
+            <ul class="list-unstyled contact-list">
 
-                    <div class="container">
-                        <h5 class="bg-info text-black-50">Activities</h5>
-                        <ul>
-                            @foreach($activities as $activity)
-                                <li>{{$activity->name}}</li>                            
-                            @endforeach
-                            </ul>
-                    </div>
+                <li class="email"><i class="fa-solid fa-envelope"></i><a href="mailto: {{$perso_details->email}}">{{$perso_details->email}}</a></li>
+                <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:{{$perso_details->num}}">0{{$perso_details->num}}</a></li>
+                <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="#" target="_blank">linkedin.com/in/Mionj</a></li>
+                <li class="github"><i class="fa-brands fa-github"></i><a href="#" target="_blank">github.com/Mionja</a></li>
+                <li class="address"><i class="fa-brands fa-location"></i>{{$perso_details->address}}</li>
+            </ul>
+        </div><!--//contact-container-->
+            @endforeach
 
-                    <div class="container">
-                        <h5 class="bg-info text-black-50">Languages </h5>
-                        <ul>
-                            @foreach($languages as $language)
-                                <li>{{$language->name}}</li>                            
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>{{--  fin contenu gauche --}}
 
-{{-- CONTENU DE DROITE --}}
-                <div class="col">
-                    <div class="container mt-3">
-                        <h5 class="bg-dark text-light">Objective </h5>
-                        @foreach($obj as $obj)
-                            <p class="ml-4">{{$obj->objective}}</p>
-                        @endforeach
-                    </div>
-                    <div class="container">
-                        <h5 class="bg-dark text-light">Education</h5>
-                        @foreach($educations as $education)
-                        <ul>
-                            <li>{{$education -> degree}}</li>
-                            <li>{{$education -> school}}</li>
-                            <li>{{$education -> grade}}</li>
-                            <li>{{$education -> year}}</li>
-                        </ul> 
-                        @endforeach
-                    </div>   
+        @if($languages->isNotEmpty())
+        <div class="languages-container container-block">
+            <h2 class="container-block-title">Languages</h2>
+            <ul class="list-unstyled interests-list">
+                @foreach($languages as $language)
+                <li>{{$language->name}} <span class="lang-desc">(Professional)</span></li>
+                @endforeach
+            </ul>
+        </div><!--//interests-->
+        @endif
 
-                    <div class="container">
-                        <h5 class="bg-dark text-light">Experiences</h5>
-                        @foreach($experiences as $experience)
-                        <ul>
-                            <li>{{$experience -> company}}</li>
-                            <li>{{$experience -> job}}  
-                                <span class="ml-4">| {{$experience -> start}}</span>  
-                                <span class="ml-3">{{$experience -> end}}</span>
-                            </li>
-                            <li>{{$experience -> details}}</li>
-                        </ul> 
-                        @endforeach
-                    </div>
-                    <div class="container">
-                        <h5 class="bg-dark text-light">Formations</h5>
-                        @foreach($formations as $formation)
-                        <ul>
-                            <li>{{$formation -> name}}</li>
-                            <li>{{$formation -> about}} <span class="ml-4">| {{$formation -> start}}</span>  <span class="ml-3">{{$formation -> end}}</span></li>
-                        </ul> 
-                        @endforeach
-                    </div> 
-                    <div class="container">
-                        <h5 class="bg-dark text-light">Hard skills</h5>
-                        @foreach($h_skill as $h_skill)
-                            {{$h_skill->name}} : 
-                            <div class="progress mb-3 bg-black-2">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-black-4 border rounded" style="width:{{$h_skill->level}}%"></div>
-                            </div>
-                        @endforeach
-                    </div>
+        
+        @if($activities->isNotEmpty())
+        <div class="interests-container container-block">
+            <h2 class="container-block-title">Activities & Interests</h2>
+            <ul class="list-unstyled interests-list">
+                @foreach($activities as $activity)
+                <li>{{$activity->name}}</li>
+                @endforeach
+            </ul>
+        </div><!--//interests-->
+        @endif
+        
+    </div><!--//sidebar-wrapper-->
+    
+    <div class="main-wrapper">
+        @if($obj->isNotEmpty())
+        <section class="section summary-section">
+            <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-user"></i></span>Objective</h2>
+            @foreach($obj as $obj)
+            <div class="summary">
+                <p>{{$obj->objective}}</p>
+            </div><!--//summary-->
+            @endforeach
+        </section><!--//section-->
+        @endif
 
-                    {{-- <div class="row border">
-                        <div class="col-sm-1"></div>PYTHON</div>
-                        <div class="col-sm-3">
-                            <div class="progress mb-3">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:75%"></div>
-                            </div>
-                        </div>
-                    </div> --}}
 
-                </div>{{--  fin contenu droite --}}
-            </div>
-        </div>
-    </div>
-    <div class="footer mb-5"></div>
-  <script src="{{ asset('js/jquery.min.js') }}"></script>
-  <script src="{{ asset('js/datepicker.js') }}"></script>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
-  <script src="{{ asset('js/moment.min.js') }}"></script>
-  <script src="{{ asset('js/jquery.peity.min.js') }}"></script>
+        @if($experiences->isNotEmpty())
+        <section class="section experiences-section">
+            <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span>Experiences</h2>
+            @foreach($experiences as $experience)
+            <div class="item">
+                <div class="meta">
+                    <div class="upper-row">
+                        <h3 class="job-title">{{$experience -> job}} </h3>
+                        <div class="time">{{$experience -> start}} - {{$experience -> end}}</div>
+                    </div><!--//upper-row-->
+                    <div class="company">{{$experience -> company}}</div>
+                </div><!--//meta-->
+                <div class="details">
+                    <p>{{$experience -> details}}</p>  
+                </div><!--//details-->
+            </div><!--//item-->
+            @endforeach
+        </section><!--//section-->
+        @endif   
 
-  <script src="{{ asset('js/bracket.js') }}"></script>
-</body>
+        @if($educations->isNotEmpty())
+        <section class="section experiences-section">
+            <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span>Education</h2>
+            @foreach($educations as $education)
+            <div class="item">
+                <div class="meta">
+                    <div class="upper-row">
+                        <h3 class="job-title">{{$education -> degree}}</h3>
+                        <div class="time">{{$education -> year}}</div>
+                    </div><!--//upper-row-->
+                    <div class="company">{{$education -> grade}}</div>
+                </div><!--//meta-->
+                <div class="details">
+                    <p>{{$education -> school}}</p>  
+                </div><!--//details-->
+            </div><!--//item-->
+            @endforeach
+        </section><!--//section-->
+        @endif
 
-</html>
+    @if($formations->isNotEmpty())
+        <section class="section experiences-section">
+            <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-archive"></i></span>Formation</h2>
+            @foreach($formations as $formation)
+            <div class="item">
+                <div class="meta">
+                    <div class="upper-row">
+                        <h3 class="job-title">{{$formation -> name}}</h3>
+                        <div class="time">{{$formation -> start}} - {{$formation -> end}}</div>
+                    </div><!--//upper-row-->
+                </div><!--//meta-->
+                <div class="details">
+                    <p>{{$formation -> about}}</p>  
+                </div><!--//details-->
+            </div><!--//item-->
+            @endforeach
+        </section><!--//section-->
+        @endif
 
+
+        @if($h_skill->isNotEmpty())
+            <section class="skills-section section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-rocket"></i></span>Skills &amp; Proficiency</h2>
+                <div class="skillset">  
+                    @foreach($h_skill as $h_skill)
+                    <div class="item">
+                        <h3 class="level-title">{{$h_skill->name}} </h3>
+                        <div class="progress level-bar">
+                            <div class="progress-bar theme-progress-bar" role="progressbar" style="width: {{$h_skill->level}}%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>                               
+                    </div><!--//item-->
+                    @endforeach
+                </div>  
+            </section><!--//skills-section-->
+        @endif        
+        
+    </div><!--//main-body-->
+</div>
+
+{{-- //---------------------------------------------------------------------------------------------------- --}}
+<div class="row">
+ <div class="col-4"></div>   
+ <div class="col-3 mt-5 mb-5">
+    <button class="btn btn-primary float-right mr-5">Download PDF</button>
+</div>   
+</div>
+
+@endsection
