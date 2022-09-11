@@ -4,7 +4,10 @@
 
    
 <div class="container-fluid mt-3 text-center">
-    <a href="{{route('logout')}}" class="btn btn-danger">Log out</a>
+    <form action="{{route('logout')}}" method="post" class="br-menu-link">
+        @csrf
+        <button type="submit" class="btn btn-danger">Logout</button>
+      </form>
     <a href="{{route('perso_details.index')}}" class="btn btn-dark">Back</a>
 </div>
 {{-- //---------------------------------------------------------------------------------------------------- --}}
@@ -18,8 +21,13 @@
                 @endif
             
             <h2 class="name">{{$perso_details->nom}}</h2>
-            <h3 class="tagline">Full Stack Developer</h3>
-            
+            @if($a->isNotEmpty())
+            <h3 class="tagline">
+                @foreach($a as $a)
+                {{$a->age}}
+                @endforeach    
+            </h3>
+            @endif
         </div><!--//profile-container-->
         
         <div class="contact-container container-block">
@@ -40,7 +48,7 @@
             <h2 class="container-block-title">Languages</h2>
             <ul class="list-unstyled interests-list">
                 @foreach($languages as $language)
-                <li>{{$language->name}} <span class="lang-desc">(Professional)</span></li>
+                <li>{{$language->name}}</li>
                 @endforeach
             </ul>
         </div><!--//interests-->
