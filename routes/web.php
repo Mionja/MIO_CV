@@ -38,4 +38,5 @@ function ()
     Route::resource('age', AgesController::class);
     
     Route::get('/resume', [ResumesController::class, 'index'])->name('resume');
+    Route::get('/resume/download', [ResumesController::class, 'download_pdf'])->name('resume.download');
 });

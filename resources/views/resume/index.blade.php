@@ -175,7 +175,7 @@
 <div class="row">
  <div class="col-4"></div>   
  <div class="col-3 mt-5 mb-5">
-    <button class="btn btn-primary float-right mr-5">Download PDF</button>
+    <a href="{{route('resume.download')}}" class="btn btn-primary float-right mr-5">Download PDF</a>
 </div>   
 </div>
 

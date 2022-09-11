@@ -13,6 +13,7 @@ use App\Models\SoftSkill;
 use App\Models\Experience;
 use App\Models\Perso_detail;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\PDF;    
 
 class ResumesController extends Controller
 {
@@ -34,6 +35,12 @@ class ResumesController extends Controller
             return view("resume.index", compact('perso_details', 'educations', 'obj', 'a', 's_skill', 'activities', 'languages', 'experiences','formations','h_skill'));    
         }
         return view('resume.nothing');
-        
     }
+
+    public function download_pdf()
+    {
+        $not_working = 'It is not working yet';
+        return redirect()->route('resume')->with('error', $not_working);
+    }
+
 }
