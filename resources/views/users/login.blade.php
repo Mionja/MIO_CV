@@ -6,7 +6,7 @@
         <form action="{{route('authenticate')}}" method="POST" class="form-signin center bordered">
             @csrf
             <div class="text-center mt-4">
-                <img class="mb-4" src="{{asset('img/mm.png')}}" alt="logo" width="72" height="72">
+                <img class="mb-4" src="{{asset('img/logo.png')}}" alt="logo" width="72" height="72">
             </div>
             <div class="text-center">
                 <p>Create your cv</p>
