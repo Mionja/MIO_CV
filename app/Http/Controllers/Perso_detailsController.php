@@ -77,4 +77,10 @@ class Perso_detailsController extends Controller
         return redirect()->route('perso_details.index');
     }
 
+    public function destroy($id)
+    {
+        Perso_detail::find($id)->delete();
+        return redirect()->route('perso_details.index');
+    }
+
 }

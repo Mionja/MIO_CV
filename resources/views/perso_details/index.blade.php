@@ -10,6 +10,14 @@
 
 @section('main-content')
 @foreach($perso_details as $perso_details)
+
+<form action="{{route('perso_details.destroy', $perso_details->id)}}" method="POST">
+    @csrf
+    @method('delete')
+    <button type="submit" class="btn btn-danger float-right mr-4">Empty</button>
+</form>
+
+
 <form action="{{route('perso_details.update', $perso_details->id)}}" method="POST" enctype="multipart/form-data" class="black-form">
     @csrf
     @method('put')

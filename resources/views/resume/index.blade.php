@@ -7,8 +7,8 @@
       <form action="{{route('logout')}}" method="post">
         @csrf
         <button type="submit" class="btn btn-danger">Logout</button>
+        <a href="{{route('perso_details.index')}}" class="btn btn-dark">Back</a>
       </form>
-    <a href="{{route('perso_details.index')}}" class="btn btn-dark">Back</a>
 </div>
 {{-- //---------------------------------------------------------------------------------------------------- --}}
     
