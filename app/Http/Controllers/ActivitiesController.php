@@ -28,7 +28,7 @@ class ActivitiesController extends Controller
             'user_id' => $user_id,
         ]);
 
-        return redirect()->route('activity.index');
+        return redirect()->route('activity.index')->with('success', "Registered");
     }
 
     public function edit($id)
@@ -46,7 +46,7 @@ class ActivitiesController extends Controller
 
         $activity->update(['name'=>$name,]);
 
-        return redirect()->route('activity.index');
+        return redirect()->route('activity.index')->with('success', "Edited");
     }
 
 

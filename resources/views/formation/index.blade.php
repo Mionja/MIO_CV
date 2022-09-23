@@ -11,7 +11,7 @@
 @section('main-content')
 @if($formations->isNotEmpty())
 <div class="container">
-    <table class="table table-striped table-hover table-dark mb-5 rounded" >
+    <table class="table table-striped table-hover mb-5 rounded" >
         <div class="d-flex justify-content-center mt-3">
             {{ $formations->links() }} {{--paginate --}}
         </div>
@@ -21,7 +21,7 @@
                 <th scope="col" class="text-light">About</th>
                 <th scope="col" class="text-light">Start date</th>
                 <th scope="col" class="text-light">End date</th>
-                <th colspan="2" class="text-light pl-5 border-left">Actions</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -36,8 +36,7 @@
                         <form action="{{route('formation.edit', $formation -> id)}}" method="POST">
                             @csrf
                             @method('get')
-                            
-                            <button class="ml-1 btn btn-sm btn-light" type="submit"><img src="{{asset('img/edit.png')}}" class="icon w-20"></button>
+                            <input type="submit" class="text-info" value="Edit">
                         </form>
                     </td>
                     {{-- Deletion --}}
@@ -45,7 +44,7 @@
                         <form action="{{route('formation.destroy', $formation-> id)}}" method="post" class="">
                             @csrf
                             @method('DELETE')
-                            <button class="ml-1 btn btn-sm btn-light" type="submit"><img src="{{asset('img/delete.png')}}" class="icon w-20"></button>
+                            <input type="submit" class="text-danger" value="Delete">
                         </form>
                     </td>
             </tr>

@@ -47,7 +47,7 @@ class ExperiencesController extends Controller
             'details'=>$details,
         ]);
 
-        return redirect()->route('experience.index')->with('success', "Enregistré");
+        return redirect()->route('experience.index')->with('success', "Registered");
     }
 
     public function show($id)
@@ -90,7 +90,7 @@ class ExperiencesController extends Controller
             'details'=>$details,
         ]);
 
-        return redirect()->route('experience.index')->with('warning', "Modifié");
+        return redirect()->route('experience.index')->with('warning', "Edited");
     }
 
 

@@ -39,7 +39,7 @@ class FormationsController extends Controller
             'end'=>$end,
         ]);
 
-        return redirect()->route('formation.index');
+        return redirect()->route('formation.index')->with('success', "Registered");
     }
 
     public function edit($id)
@@ -65,7 +65,7 @@ class FormationsController extends Controller
             'start'=>$start,
             'end'=>$end,
         ]);
-        return redirect()->route('formation.index');
+        return redirect()->route('formation.index')->with('success', "Edited");
     }
 
 

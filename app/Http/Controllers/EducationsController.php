@@ -43,7 +43,7 @@ class EducationsController extends Controller
             'year' => $year,
         ]);
 
-        return redirect()->route('education.index')->with('success', "Enregistré");
+        return redirect()->route('education.index')->with('success', "Registered");
     }
 
     public function edit($id)
@@ -71,7 +71,7 @@ class EducationsController extends Controller
 
         $education -> update(['degree'=>$degree,'school'=>$school, 'grade'=> $grade, 'year'=> $year ]);
 
-        return redirect() -> route('education.index')->with('success', "Modifié");
+        return redirect() -> route('education.index')->with('success', "Edited");
     }
 
     public function destroy($id)

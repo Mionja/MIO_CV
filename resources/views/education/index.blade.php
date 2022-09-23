@@ -11,7 +11,7 @@
 @section('main-content')
 @if($educations->isNotEmpty())
 <div class="container">
-    <table class="table table-striped table-hover table-dark mb-5 rounded" >
+    <table class="table table-striped table-hover mb-5 rounded" >
         <div class="d-flex justify-content-center mt-3">
             {{ $educations->links() }}
         </div>
@@ -21,7 +21,7 @@
                 <th scope="col" class="text-light">School / University</th>
                 <th scope="col" class="text-light">Grade / Score</th>
                 <th scope="col" class="text-light">Year</th>
-                <th colspan="2" class="text-light pl-5 border-left">Actions</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -36,8 +36,7 @@
                         <form action="{{route('education.edit', $education -> id)}}" method="POST">
                             @csrf
                             @method('get')
-                            <img src="{{asset('img/edit.png')}}" class="icon w-20">
-                            <button class="ml-1 text-info" type="submit">Edit</button>
+                            <input type="submit" class="text-info" value="Edit">
                         </form>
                     </td>
                     {{-- Deletion --}}
@@ -45,8 +44,7 @@
                         <form action="{{route('education.destroy', $education-> id)}}" method="post" class="">
                             @csrf
                             @method('DELETE')
-                            <img src="{{asset('img/delete.png')}}" class="icon w-20">
-                            <button class=" text text-danger ml-1" type="submit">Delete</button>
+                            <input type="submit" class="text-danger" value="Delete">
                         </form>
                     </td>
             </tr>
