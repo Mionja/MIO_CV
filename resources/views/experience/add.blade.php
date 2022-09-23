@@ -16,11 +16,11 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="company">Company name</label>
-                    <input name="company" class="form-control @error('company') is-invalid @enderror" value="" type="text">
+                    <input name="company" class="form-control @error('company') is-invalid @enderror"  type="text" value="{{old('company')}}">
                        @error('company')
-                    <div class="invalid-feedback">
-                        These forms must be filled
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
@@ -28,11 +28,11 @@
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="job">Job title</label>
-                    <input name="job" rows="3" value="" class="form-control @error('job') is-invalid @enderror">
+                    <input name="job" rows="3"  class="form-control @error('job') is-invalid @enderror" value="{{old('job')}}">
                        @error('job')
-                    <div class="invalid-feedback">
-                        These forms must be filled
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
@@ -40,31 +40,31 @@
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="start">Start date</label>
-                    <input type="date" class="form-control @error('start') is-invalid @enderror" name="start" id="" value="">
+                    <input type="date" class="form-control @error('start') is-invalid @enderror" name="start" id="" value="{{old('start')}}">
                        @error('start')
-                    <div class="invalid-feedback">
-                        These forms must be filled
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>
                     @enderror
                 </div><!-- col -->
                 <div class="col-lg">
                     <label for="end">End date</label>
-                    <input name="end" class="form-control @error('end') is-invalid @enderror" value="" type="date">
+                    <input name="end" class="form-control @error('end') is-invalid @enderror" value="{{old('end')}}" type="date">
                        @error('end')
-                    <div class="invalid-feedback">
-                        These forms must be filled
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
             <div class="row  mg-t-20">
                 <div class="col-lg">
                     <label for="details">Details</label>
-                    <input name="details" class="form-control @error('details') is-invalid @enderror" value="" type="text">
+                    <input name="details" class="form-control @error('details') is-invalid @enderror" value="{{old('details')}}" type="text">
                     @error('details')
-                    <div class="invalid-feedback">
-                        These forms must be filled
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->

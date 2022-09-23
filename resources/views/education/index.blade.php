@@ -9,6 +9,7 @@
 @section('page-description', ' ')
 
 @section('main-content')
+@if($educations->isNotEmpty())
 <div class="container">
     <table class="table table-striped table-hover table-dark mb-5 rounded" >
         <div class="d-flex justify-content-center mt-3">
@@ -62,5 +63,13 @@
         {{ $educations->links() }}
     </div>
 </div>
+@else
+<div class="row">
+    <div class="col-5"></div>
+    <div class="col-1 ml-5">
+        <a href="{{route('education.create')}}" class="btn btn-info float-right">ADD</a>
+    </div>
+</div>
 
+@endif
 @endsection

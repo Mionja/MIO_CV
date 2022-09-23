@@ -19,6 +19,12 @@ class FormationsController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' =>  'required'    ,
+            'about' => 'required'         ,
+            'start'  => 'required'      ,
+            'end'   => 'required'       
+        ]);
         $name = $request-> name;
         $about = $request-> about;
         $start = $request-> start;

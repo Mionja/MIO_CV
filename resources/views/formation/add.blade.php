@@ -16,25 +16,45 @@
         <div class="row">
             <div class="col-lg">
                 <label for="name">Name of the formation</label>
-                <input name="name" class="form-control" value="" type="text" required>
+                <input name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" type="text" >
+                @error('name')
+                <p class="text-danger text-sm-left" style="font-size: 11px">
+                    Please fill out this field  
+                </p>
+                @enderror
             </div><!-- col -->
         </div><!-- row -->
     
         <div class="row mg-t-20">
             <div class="col-lg">
                 <label for="about">About</label>
-                <input name="about" rows="3" value="" class="form-control" required>
+                <input name="about" rows="3" value="{{old('about')}}" class="form-control @error('about') is-invalid @enderror">
+                @error('about')
+                <p class="text-danger text-sm-left" style="font-size: 11px">
+                    Please fill out this field
+                </p>
+                @enderror
             </div><!-- col -->
         </div><!-- row -->
 
         <div class="row mg-t-20">
             <div class="col-lg">
                 <label for="start">Start date</label>
-                <input type="date" class="form-control" name="start" id="" value="" required>
+                <input type="date" class="form-control @error('start') is-invalid @enderror" name="start" id="" value="{{old('start')}}">
+                @error('start')
+                <p class="text-danger text-sm-left" style="font-size: 11px">
+                    Please fill out this field
+                </p>
+                @enderror
             </div><!-- col -->
             <div class="col-lg">
                 <label for="end">End date</label>
-                <input name="end" class="form-control" value="" type="date" required>
+                <input name="end" class="form-control @error('end') is-invalid @enderror" value="{{old('end')}}" type="date">
+                @error('end')
+                <p class="text-danger text-sm-left" style="font-size: 11px">
+                    Please fill out this field
+                </p>
+                @enderror
             </div><!-- col -->
         </div><!-- row -->
 

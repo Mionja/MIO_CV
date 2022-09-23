@@ -12,6 +12,7 @@ class ActivitiesController extends Controller
         $activity = Activity::with('User')->where('user_id', auth()->user()->id)->paginate(5);
         return view('activity.index', compact('activity'));
     }
+    
     public function create()
     {
         return view('activity.add');

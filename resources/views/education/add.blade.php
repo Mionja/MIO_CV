@@ -17,11 +17,11 @@
             <div class="row">
                 <div class="col-lg">
                     <label for="couse">Course / Degree</label>
-                    <input name="degree" class="form-control @error('degree') is-invalid @enderror" value="" type="text">
+                    <input name="degree" class="form-control @error('degree') is-invalid @enderror" value="{{old('degree')}}" type="text">
                     @error('degree')
-                    <div class="invalid-feedback">
-                        Ce champ est obligatoire
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>    
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
@@ -29,11 +29,11 @@
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="school">School / University</label>
-                    <input name="school" rows="3" value="" class="form-control @error('school') is-invalid @enderror">
+                    <input name="school" rows="3" value="{{old('school')}}" class="form-control @error('school') is-invalid @enderror">
                     @error('school')
-                    <div class="invalid-feedback">
-                        Ce champ est obligatoire
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>    
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
@@ -41,11 +41,11 @@
             <div class="row mg-t-20">
                 <div class="col-lg">
                     <label for="grade">Grade / Score</label>
-                    <input type="text" class="form-control @error('grade') is-invalid @enderror" name="grade" id="" value="">
+                    <input type="text" class="form-control @error('grade') is-invalid @enderror" name="grade" id="" value="{{old('grade')}}">
                     @error('grade')
-                    <div class="invalid-feedback">
-                        Ce champ est obligatoire
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>    
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
@@ -53,11 +53,11 @@
             <div class="row  mg-t-20">
                 <div class="col-lg">
                     <label for="year">Year</label>
-                    <input name="year" class="form-control @error('year') is-invalid @enderror" value="" type="text">
+                    <input name="year" class="form-control @error('year') is-invalid @enderror" value="{{old('year')}}" type="text">
                     @error('year')
-                    <div class="invalid-feedback">
-                        Ce champ est obligatoire
-                    </div>    
+                    <p class="text-danger text-sm-left" style="font-size: 11px">
+                        Please fill out this field
+                    </p>    
                     @enderror
                 </div><!-- col -->
             </div><!-- row -->
