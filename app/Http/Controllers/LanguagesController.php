@@ -12,6 +12,7 @@ class LanguagesController extends Controller
         $languages = Language::with('User')->where('user_id', auth()->user()->id)->paginate(5);
         return view('language.index', compact('languages'));
     }
+
     public function create()
     {
         return view('language.add');
@@ -47,7 +48,6 @@ class LanguagesController extends Controller
 
         return redirect()->route('language.index');
     }
-
 
     public function destroy($id)
     {

@@ -13,6 +13,7 @@ use App\Http\Controllers\ExperiencesController;
 use App\Http\Controllers\Hard_skillsController;
 use App\Http\Controllers\Soft_skillsController;
 use App\Http\Controllers\Perso_detailsController;
+use App\Http\Controllers\More_sectionsController;
 use App\Http\Controllers\UserController;
 
 
@@ -36,6 +37,7 @@ function ()
     Route::resource('education', EducationsController::class);
     Route::resource('language', LanguagesController::class);
     Route::resource('age', AgesController::class);
+    Route::resource('more_section', More_sectionsController::class);
     
     Route::get('/resume', [ResumesController::class, 'index'])->name('resume');
     Route::get('/resume/download', [ResumesController::class, 'download_pdf'])->name('resume.download');

@@ -11,6 +11,7 @@ use App\Models\HardSkill;
 use App\Models\Objective;
 use App\Models\SoftSkill;
 use App\Models\Experience;
+use App\Models\More_section;
 use App\Models\Perso_detail;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -111,6 +112,12 @@ class User extends Authenticatable
     public function age() 
     {
         return $this->hasMany(Age::class, 'user_id');
+    }
+
+    // Relationship with more_section
+    public function more_section() 
+    {
+        return $this->hasMany(More_section::class, 'user_id');
     }
 }
 
